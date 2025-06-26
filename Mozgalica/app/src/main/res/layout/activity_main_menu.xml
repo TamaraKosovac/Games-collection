@@ -1,0 +1,117 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <RelativeLayout
+        android:id="@+id/topNavBar"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/navbar_height"
+        android:background="@color/colorPrimary"
+        android:layout_alignParentTop="true">
+
+        <ImageView
+            android:id="@+id/btnBack"
+            android:layout_width="@dimen/icon_size_nav"
+            android:layout_height="@dimen/icon_size_nav"
+            android:src="@drawable/ic_back"
+            android:contentDescription="@string/back"
+            android:layout_centerVertical="true"
+            android:tint="@color/colorOnPrimary"
+            android:layout_alignParentStart="true"
+            android:layout_marginStart="@dimen/margin_medium"
+            android:clickable="true"
+            android:focusable="true"
+            android:onClick="onBack" />
+
+        <ImageView
+            android:id="@+id/btnSettingsIcon"
+            android:layout_width="@dimen/icon_size_nav"
+            android:layout_height="@dimen/icon_size_nav"
+            android:src="@drawable/ic_settings"
+            android:layout_centerVertical="true"
+            android:contentDescription="@string/settings"
+            android:tint="@color/colorOnPrimary"
+            android:layout_marginEnd="@dimen/margin_medium"
+            android:layout_alignParentEnd="true"
+            android:clickable="true"
+            android:focusable="true"
+            android:onClick="onSettings" />
+    </RelativeLayout>
+
+    <ImageView
+        android:id="@+id/logoImage"
+        android:layout_width="@dimen/logo_size"
+        android:layout_height="@dimen/logo_size"
+        android:src="@drawable/ic_launcher_foreground"
+        android:contentDescription="@string/app_name"
+        android:layout_below="@id/topNavBar"
+        android:layout_marginTop="@dimen/margin_medium"
+        android:layout_centerHorizontal="true" />
+
+    <TextView
+        android:id="@+id/tvWelcome"
+        android:text="@string/welcome"
+        android:textSize="@dimen/title_text_size"
+        android:textColor="@color/colorPrimary"
+        android:textStyle="bold"
+        android:layout_below="@id/logoImage"
+        android:layout_marginTop="@dimen/margin_medium"
+        android:layout_centerHorizontal="true"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content" />
+
+    <Button
+        android:id="@+id/btnTicTacToe"
+        style="@style/MozgalicaButton"
+        android:text="@string/play_tic_tac_toe"
+        android:onClick="onPlayTicTacToe"
+        android:layout_below="@id/tvWelcome"
+        android:layout_marginTop="@dimen/game_button_top_margin"
+        android:layout_centerHorizontal="true"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" />
+
+    <Button
+        android:id="@+id/btnMemoryMatch"
+        style="@style/MozgalicaButton"
+        android:text="@string/play_memory_match"
+        android:onClick="onPlayMemoryMatch"
+        android:layout_below="@id/btnTicTacToe"
+        android:layout_marginTop="@dimen/margin_medium"
+        android:layout_centerHorizontal="true"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" />
+
+    <Button
+        android:id="@+id/btnSudoku"
+        style="@style/MozgalicaButton"
+        android:text="@string/play_sudoku"
+        android:onClick="onPlaySudoku"
+        android:layout_below="@id/btnMemoryMatch"
+        android:layout_marginTop="@dimen/margin_medium"
+        android:layout_centerHorizontal="true"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" />
+
+    <Button
+        android:id="@+id/btnHistory"
+        style="@style/MozgalicaSecondaryButton"
+        android:text="@string/my_results"
+        android:onClick="onShowHistory"
+        android:layout_below="@id/btnSudoku"
+        android:layout_marginTop="@dimen/margin_large"
+        android:layout_centerHorizontal="true"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content" />
+
+    <Button
+        android:id="@+id/btnLogout"
+        style="@style/MozgalicaSecondaryButton"
+        android:text="@string/logout"
+        android:onClick="onLogout"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginBottom="@dimen/margin_medium"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content" />
+</RelativeLayout>

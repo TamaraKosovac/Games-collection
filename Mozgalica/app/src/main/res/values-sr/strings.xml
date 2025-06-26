@@ -17,4 +17,12 @@
     <string name="login_failed">Pogrešno korisničko ime ili lozinka</string>
     <string name="go_to_register">Nemate nalog? Registrujte se</string>
     <string name="show_password_icon">Prikaži ili sakrij lozinku</string>
+    <string name="settings">Podešavanja</string>
+    <string name="welcome">Dobrodošli, %1$s</string>
+    <string name="play_tic_tac_toe">Iks-Oks</string>
+    <string name="play_memory_match">Igra Memorije</string>
+    <string name="play_sudoku">Sudoku</string>
+    <string name="my_results">Moji Rezultati</string>
+    <string name="back">Nazad</string>
+    <string name="logout">Odjavi se</string>
 </resources>
