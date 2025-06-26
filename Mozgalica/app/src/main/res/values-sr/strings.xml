@@ -1,0 +1,20 @@
+<resources>
+    <string name="app_name">Mozgalica</string>
+    <string name="login">Prijava</string>
+    <string name="register">Registracija</string>
+    <string name="name_required">Unesite ime i prezime</string>
+    <string name="full_name_hint">Ime i prezime</string>
+    <string name="username">Korisničko ime</string>
+    <string name="password">Lozinka</string>
+    <string name="language">Jezik</string>
+    <string name="empty_fields_error">Polja ne smiju biti prazna</string>
+    <string name="invalid_password">Lozinka mora imati 8+ karaktera, veliko slovo, broj i spec. karakter</string>
+    <string name="registration_success">Registracija uspješna!</string>
+    <string name="username_exists">Korisničko ime već postoji!</string>
+    <string name="go_to_login">Već imate nalog? Prijavite se</string>
+    <string name="enter_credentials">Unesite korisničko ime i lozinku</string>
+    <string name="login_success">Uspješna prijava!</string>
+    <string name="login_failed">Pogrešno korisničko ime ili lozinka</string>
+    <string name="go_to_register">Nemate nalog? Registrujte se</string>
+    <string name="show_password_icon">Prikaži ili sakrij lozinku</string>
+</resources>

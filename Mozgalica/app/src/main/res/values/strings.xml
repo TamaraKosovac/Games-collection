@@ -1,3 +1,20 @@
 <resources>
     <string name="app_name">Mozgalica</string>
+    <string name="login">Login</string>
+    <string name="register">Register</string>
+    <string name="name_required">Please enter your full name</string>
+    <string name="full_name_hint">Full name</string>
+    <string name="username">Username</string>
+    <string name="password">Password</string>
+    <string name="language">Language</string>
+    <string name="empty_fields_error">Fields must not be empty</string>
+    <string name="invalid_password">Password must be 8+ characters, contain an uppercase letter, number, and special character</string>
+    <string name="registration_success">Registration successful!</string>
+    <string name="username_exists">Username already exists!</string>
+    <string name="go_to_login">Already have an account? Login</string>
+    <string name="enter_credentials">Enter username and password</string>
+    <string name="login_success">Login successful!</string>
+    <string name="login_failed">Incorrect username or password</string>
+    <string name="go_to_register">Don\'t have an account? Register</string>
+    <string name="show_password_icon">Show or hide password</string>
 </resources>
