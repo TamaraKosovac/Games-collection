@@ -28,4 +28,6 @@
     <string name="change_language">Promijeni jezik</string>
     <string name="home">Početna</string>
     <string name="games">Igre</string>
+    <string name="select_language">Odaberi jezik</string>
+    <string name="logout_success">Uspješna odjava!</string>
 </resources>

@@ -28,4 +28,6 @@
     <string name="change_language">Change language</string>
     <string name="home">Home</string>
     <string name="games">Games</string>
+    <string name="select_language">Select Language</string>
+    <string name="logout_success">Logout successful!</string>
 </resources>

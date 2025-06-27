@@ -4,10 +4,12 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.widget.Button;
 import android.widget.ImageView;
+import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
 
 import com.example.mozgalica.R;
+import com.example.mozgalica.utils.LocaleHelper;
 
 public class SettingsActivity extends AppCompatActivity {
 
@@ -27,10 +29,25 @@ public class SettingsActivity extends AppCompatActivity {
         Button btnLogout = findViewById(R.id.btnLogout);
 
         btnChangeLanguage.setOnClickListener(v -> {
-            // Ovde možeš otvoriti dijalog ili novu aktivnost za izbor jezika
+            String[] languages = {"English", "Srpski"};
+            String[] languageCodes = {"en", "sr"};
+
+            new android.app.AlertDialog.Builder(this)
+                    .setTitle(R.string.select_language)
+                    .setItems(languages, (dialog, which) -> {
+                        LocaleHelper.setLocale(SettingsActivity.this, languageCodes[which]);
+
+                        Intent intent = new Intent(SettingsActivity.this, MainMenuActivity.class);
+                        intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TASK);
+                        startActivity(intent);
+                        finish();
+                    })
+                    .show();
         });
 
+
         btnLogout.setOnClickListener(v -> {
+            Toast.makeText(SettingsActivity.this, getString(R.string.logout_success), Toast.LENGTH_SHORT).show();
             Intent intent = new Intent(SettingsActivity.this, LoginActivity.class);
             intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TASK);
             startActivity(intent);
