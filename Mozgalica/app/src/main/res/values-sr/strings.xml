@@ -30,4 +30,18 @@
     <string name="games">Igre</string>
     <string name="select_language">Odaberi jezik</string>
     <string name="logout_success">Uspješna odjava!</string>
+    <string name="view_details">Pogledaj Detalje Igre</string>
+    <string name="game_details">Detalji Igre</string>
+
+    <string name="tictactoe_rules">Igrači naizmjenično postavljaju X ili O. Prvi koji poreda 3 pobjeđuje.</string>
+    <string name="tictactoe_scoring">+10 za pobjedu, 0 za neriješeno, -5 za poraz</string>
+
+    <string name="memory_rules">Pronađi parove među promiješanim karticama.</string>
+    <string name="memory_scoring">+5 za svaki par, -2 za pogrešan pokušaj</string>
+
+    <string name="sudoku_rules">Popuni mrežu tako da svaki red, kolona i blok sadrže brojeve od 1 do 9.</string>
+    <string name="sudoku_scoring">Bodovanje po vremenu: brže = više poena</string>
+
+    <string name="watch_video">Pogledaj video tutorijal</string>
+
 </resources>

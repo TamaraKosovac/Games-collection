@@ -33,4 +33,5 @@
     <dimen name="text_welcome_size">18sp</dimen>
     <dimen name="margin_very_large">32dp</dimen>
     <dimen name="divider_height">1dp</dimen>
+    <dimen name="game_button_details_margin">8dp</dimen>
 </resources>

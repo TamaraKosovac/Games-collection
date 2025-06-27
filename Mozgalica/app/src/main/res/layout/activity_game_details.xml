@@ -13,26 +13,27 @@
             android:id="@+id/btnBack"
             android:layout_width="@dimen/icon_size_nav"
             android:layout_height="@dimen/icon_size_nav"
-            android:src="@drawable/ic_back"
             android:layout_centerVertical="true"
-            android:layout_alignParentStart="true"
             android:layout_marginStart="@dimen/margin_medium"
+            android:layout_alignParentStart="true"
+            android:src="@drawable/ic_back"
             android:tint="@color/colorOnPrimary"
             android:contentDescription="@string/back"
             android:clickable="true"
-            android:focusable="true" />
+            android:focusable="true"
+            android:onClick="onBackPressed" />
 
         <TextView
-            android:id="@+id/tvTitle"
-            android:text="@string/games"
+            android:id="@+id/tvTitleToolbar"
+            android:text="@string/game_details"
             android:textColor="@color/colorOnPrimary"
             android:textSize="@dimen/title_text_size"
             android:textStyle="bold"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
             android:layout_centerVertical="true"
             android:layout_toEndOf="@id/btnBack"
-            android:layout_marginStart="@dimen/margin_title_start" />
+            android:layout_marginStart="@dimen/margin_title_start"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
 
         <ImageView
             android:id="@+id/btnSettingsIcon"
@@ -49,71 +50,50 @@
             android:onClick="onSettings" />
     </RelativeLayout>
 
-    <Button
-        android:id="@+id/btnTicTacToe"
-        style="@style/MozgalicaButton"
-        android:text="@string/play_tic_tac_toe"
-        android:onClick="onPlayTicTacToe"
+    <ScrollView
         android:layout_below="@id/topNavBar"
-        android:layout_marginTop="@dimen/game_button_top_margin"
-        android:layout_centerHorizontal="true"
+        android:layout_above="@id/bottomNavBar"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content" />
+        android:layout_height="wrap_content"
+        android:padding="@dimen/main_padding">
 
-    <Button
-        android:id="@+id/btnTicTacToeDetails"
-        style="@style/MozgalicaSecondaryButton"
-        android:text="@string/view_details"
-        android:onClick="onTicTacToeDetails"
-        android:layout_below="@id/btnTicTacToe"
-        android:layout_marginTop="@dimen/game_button_details_margin"
-        android:layout_centerHorizontal="true"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content" />
+        <LinearLayout
+            android:orientation="vertical"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
 
-    <Button
-        android:id="@+id/btnMemoryMatch"
-        style="@style/MozgalicaButton"
-        android:text="@string/play_memory_match"
-        android:onClick="onPlayMemoryMatch"
-        android:layout_below="@id/btnTicTacToeDetails"
-        android:layout_marginTop="@dimen/margin_medium"
-        android:layout_centerHorizontal="true"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content" />
+            <TextView
+                android:id="@+id/tvTitle"
+                android:textSize="@dimen/title_text_size"
+                android:textStyle="bold"
+                android:layout_marginBottom="@dimen/margin_medium"
+                android:text="Game Title"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" />
 
-    <Button
-        android:id="@+id/btnMemoryMatchDetails"
-        style="@style/MozgalicaSecondaryButton"
-        android:text="@string/view_details"
-        android:onClick="onMemoryMatchDetails"
-        android:layout_below="@id/btnMemoryMatch"
-        android:layout_marginTop="@dimen/game_button_details_margin"
-        android:layout_centerHorizontal="true"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content" />
+            <TextView
+                android:id="@+id/tvRules"
+                android:textSize="@dimen/text_welcome_size"
+                android:layout_marginBottom="@dimen/margin_medium"
+                android:text="Rules..."
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" />
 
-    <Button
-        android:id="@+id/btnSudoku"
-        style="@style/MozgalicaButton"
-        android:text="@string/play_sudoku"
-        android:onClick="onPlaySudoku"
-        android:layout_below="@id/btnMemoryMatchDetails"
-        android:layout_marginTop="@dimen/margin_medium"
-        android:layout_centerHorizontal="true"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content" />
+            <TextView
+                android:id="@+id/tvScoring"
+                android:textSize="@dimen/text_welcome_size"
+                android:layout_marginBottom="@dimen/margin_large"
+                android:text="Scoring..."
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" />
 
-    <Button
-        android:id="@+id/btnSudokuDetails"
-        style="@style/MozgalicaSecondaryButton"
-        android:text="@string/view_details"
-        android:onClick="onSudokuDetails"
-        android:layout_below="@id/btnSudoku"
-        android:layout_marginTop="@dimen/game_button_details_margin"
-        android:layout_centerHorizontal="true"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content" />
+            <Button
+                android:id="@+id/btnWatchVideo"
+                android:text="@string/watch_video"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"/>
+        </LinearLayout>
+    </ScrollView>
 
     <View
         android:layout_width="match_parent"
@@ -124,7 +104,7 @@
     <LinearLayout
         android:id="@+id/bottomNavBar"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_height="@dimen/navbar_height"
         android:layout_alignParentBottom="true"
         android:orientation="horizontal"
         android:background="@android:color/white"

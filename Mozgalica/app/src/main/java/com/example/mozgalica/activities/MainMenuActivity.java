@@ -51,4 +51,22 @@ public class MainMenuActivity extends AppCompatActivity {
     public void onSettings(View view) {
         startActivity(new Intent(this, SettingsActivity.class));
     }
+
+    public void onTicTacToeDetails(View view) {
+        Intent i = new Intent(this, GameDetailsActivity.class);
+        i.putExtra("GAME_NAME", "TicTacToe");
+        startActivity(i);
+    }
+
+    public void onMemoryMatchDetails(View view) {
+        Intent i = new Intent(this, GameDetailsActivity.class);
+        i.putExtra("GAME_NAME", "MemoryMatch");
+        startActivity(i);
+    }
+
+    public void onSudokuDetails(View view) {
+        Intent i = new Intent(this, GameDetailsActivity.class);
+        i.putExtra("GAME_NAME", "Sudoku");
+        startActivity(i);
+    }
 }

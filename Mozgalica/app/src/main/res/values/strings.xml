@@ -30,4 +30,18 @@
     <string name="games">Games</string>
     <string name="select_language">Select Language</string>
     <string name="logout_success">Logout successful!</string>
+    <string name="view_details">View Game Details</string>
+    <string name="game_details">Game Details</string>
+
+    <string name="tictactoe_rules">Players take turns placing X or O. First to align 3 wins.</string>
+    <string name="tictactoe_scoring">+10 for win, 0 for draw, -5 for loss</string>
+
+    <string name="memory_rules">Find matching pairs among shuffled cards.</string>
+    <string name="memory_scoring">+5 per match, -2 per failed try</string>
+
+    <string name="sudoku_rules">Fill the grid so each row, column, and block has digits 1-9.</string>
+    <string name="sudoku_scoring">Time-based scoring: faster = more points</string>
+
+    <string name="watch_video">Watch Video Tutorial</string>
+
 </resources>
