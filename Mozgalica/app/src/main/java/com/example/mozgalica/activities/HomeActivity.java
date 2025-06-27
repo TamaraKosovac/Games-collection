@@ -2,40 +2,40 @@ package com.example.mozgalica.activities;
 
 import android.content.Intent;
 import android.os.Bundle;
-import android.widget.Button;
-import android.widget.ImageView;
 
 import androidx.appcompat.app.AppCompatActivity;
 
 import com.example.mozgalica.R;
+import android.widget.TextView;
 
-public class SettingsActivity extends AppCompatActivity {
+
+public class HomeActivity extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_settings);
+        setContentView(R.layout.activity_home);
 
         if (android.os.Build.VERSION.SDK_INT >= android.os.Build.VERSION_CODES.LOLLIPOP) {
             getWindow().setStatusBarColor(getResources().getColor(R.color.colorPrimaryVariant));
         }
 
-        ImageView btnBack = findViewById(R.id.btnBack);
-        btnBack.setOnClickListener(v -> finish());
+        TextView tvWelcome = findViewById(R.id.tvWelcome);
+        String username = getIntent().getStringExtra("USERNAME");
 
-        Button btnChangeLanguage = findViewById(R.id.btnChangeLanguage);
-        Button btnLogout = findViewById(R.id.btnLogout);
+        if (username != null && !username.isEmpty()) {
+            String welcomeText = getString(R.string.welcome) + ", " + username;
+            tvWelcome.setText(welcomeText);
+        }
 
-        btnChangeLanguage.setOnClickListener(v -> {
-            // Ovde možeš otvoriti dijalog ili novu aktivnost za izbor jezika
-        });
+        findViewById(R.id.btnGoToGames).setOnClickListener(v ->
+                startActivity(new Intent(this, MainMenuActivity.class)));
 
-        btnLogout.setOnClickListener(v -> {
-            Intent intent = new Intent(SettingsActivity.this, LoginActivity.class);
-            intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TASK);
-            startActivity(intent);
-            finish();
-        });
+        findViewById(R.id.btnMyResults).setOnClickListener(v ->
+                startActivity(new Intent(this, HistoryActivity.class)));
+
+        findViewById(R.id.btnSettingsIcon).setOnClickListener(v ->
+                startActivity(new Intent(this, SettingsActivity.class)));
 
         findViewById(R.id.navHome).setOnClickListener(v ->
                 startActivity(new Intent(this, HomeActivity.class)));

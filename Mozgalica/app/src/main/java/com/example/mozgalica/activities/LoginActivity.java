@@ -29,6 +29,7 @@ public class LoginActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_login);
+
         if (android.os.Build.VERSION.SDK_INT >= android.os.Build.VERSION_CODES.LOLLIPOP) {
             getWindow().setStatusBarColor(getResources().getColor(R.color.colorPrimaryVariant));
         }
@@ -66,7 +67,7 @@ public class LoginActivity extends AppCompatActivity {
             if (dbHelper.checkUser(username, password)) {
                 Toast.makeText(this, getString(R.string.login_success), Toast.LENGTH_SHORT).show();
 
-                Intent intent = new Intent(this, MainMenuActivity.class);
+                Intent intent = new Intent(this, HomeActivity.class);
                 intent.putExtra("USERNAME", username);
                 startActivity(intent);
                 finish();

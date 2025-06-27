@@ -5,7 +5,7 @@
     <RelativeLayout
         android:id="@+id/topNavBar"
         android:layout_width="match_parent"
-        android:layout_height="@dimen/navbar_height"
+        android:layout_height="?attr/actionBarSize"
         android:background="@color/colorPrimary"
         android:layout_alignParentTop="true">
 
@@ -14,14 +14,25 @@
             android:layout_width="@dimen/icon_size_nav"
             android:layout_height="@dimen/icon_size_nav"
             android:src="@drawable/ic_back"
-            android:contentDescription="@string/back"
             android:layout_centerVertical="true"
-            android:tint="@color/colorOnPrimary"
             android:layout_alignParentStart="true"
             android:layout_marginStart="@dimen/margin_medium"
+            android:tint="@color/colorOnPrimary"
+            android:contentDescription="@string/back"
             android:clickable="true"
-            android:focusable="true"
-            android:onClick="onBack" />
+            android:focusable="true" />
+
+        <TextView
+            android:id="@+id/tvTitle"
+            android:text="@string/games"
+            android:textColor="@color/colorOnPrimary"
+            android:textSize="@dimen/title_text_size"
+            android:textStyle="bold"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:layout_toEndOf="@id/btnBack"
+            android:layout_marginStart="@dimen/margin_title_start" />
 
         <ImageView
             android:id="@+id/btnSettingsIcon"
@@ -29,43 +40,21 @@
             android:layout_height="@dimen/icon_size_nav"
             android:src="@drawable/ic_settings"
             android:layout_centerVertical="true"
-            android:contentDescription="@string/settings"
-            android:tint="@color/colorOnPrimary"
-            android:layout_marginEnd="@dimen/margin_medium"
             android:layout_alignParentEnd="true"
+            android:layout_marginEnd="@dimen/margin_medium"
+            android:tint="@color/colorOnPrimary"
+            android:contentDescription="@string/settings"
             android:clickable="true"
             android:focusable="true"
             android:onClick="onSettings" />
     </RelativeLayout>
-
-    <ImageView
-        android:id="@+id/logoImage"
-        android:layout_width="@dimen/logo_size"
-        android:layout_height="@dimen/logo_size"
-        android:src="@drawable/ic_launcher_foreground"
-        android:contentDescription="@string/app_name"
-        android:layout_below="@id/topNavBar"
-        android:layout_marginTop="@dimen/margin_medium"
-        android:layout_centerHorizontal="true" />
-
-    <TextView
-        android:id="@+id/tvWelcome"
-        android:text="@string/welcome"
-        android:textSize="@dimen/title_text_size"
-        android:textColor="@color/colorPrimary"
-        android:textStyle="bold"
-        android:layout_below="@id/logoImage"
-        android:layout_marginTop="@dimen/margin_medium"
-        android:layout_centerHorizontal="true"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content" />
 
     <Button
         android:id="@+id/btnTicTacToe"
         style="@style/MozgalicaButton"
         android:text="@string/play_tic_tac_toe"
         android:onClick="onPlayTicTacToe"
-        android:layout_below="@id/tvWelcome"
+        android:layout_below="@id/topNavBar"
         android:layout_marginTop="@dimen/game_button_top_margin"
         android:layout_centerHorizontal="true"
         android:layout_width="match_parent"
@@ -93,25 +82,100 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content" />
 
-    <Button
-        android:id="@+id/btnHistory"
-        style="@style/MozgalicaSecondaryButton"
-        android:text="@string/my_results"
-        android:onClick="onShowHistory"
-        android:layout_below="@id/btnSudoku"
-        android:layout_marginTop="@dimen/margin_large"
-        android:layout_centerHorizontal="true"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content" />
-
-    <Button
-        android:id="@+id/btnLogout"
-        style="@style/MozgalicaSecondaryButton"
-        android:text="@string/logout"
-        android:onClick="onLogout"
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/divider_height"
         android:layout_alignParentBottom="true"
-        android:layout_centerHorizontal="true"
-        android:layout_marginBottom="@dimen/margin_medium"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content" />
+        android:background="@android:color/darker_gray" />
+
+    <LinearLayout
+        android:id="@+id/bottomNavBar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:orientation="horizontal"
+        android:background="@android:color/white"
+        android:paddingTop="@dimen/nav_padding_vertical"
+        android:paddingBottom="@dimen/nav_padding_vertical"
+        android:weightSum="3"
+        android:gravity="center">
+
+        <LinearLayout
+            android:id="@+id/navHome"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:orientation="vertical"
+            android:gravity="center"
+            android:clickable="true"
+            android:focusable="true">
+
+            <ImageView
+                android:layout_width="@dimen/icon_size_small"
+                android:layout_height="@dimen/icon_size_small"
+                android:src="@drawable/ic_home"
+                android:tint="@color/colorPrimary"
+                android:contentDescription="@string/home" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/home"
+                android:textSize="@dimen/text_nav_label"
+                android:textColor="@color/colorPrimary"
+                android:layout_marginTop="@dimen/margin_extra_small" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/navGames"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:orientation="vertical"
+            android:gravity="center"
+            android:clickable="true"
+            android:focusable="true">
+
+            <ImageView
+                android:layout_width="@dimen/icon_size_small"
+                android:layout_height="@dimen/icon_size_small"
+                android:src="@drawable/ic_games"
+                android:tint="@color/colorPrimary"
+                android:contentDescription="@string/games" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/games"
+                android:textSize="@dimen/text_nav_label"
+                android:textColor="@color/colorPrimary"
+                android:layout_marginTop="@dimen/margin_extra_small" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/navResults"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:orientation="vertical"
+            android:gravity="center"
+            android:clickable="true"
+            android:focusable="true">
+
+            <ImageView
+                android:layout_width="@dimen/icon_size_small"
+                android:layout_height="@dimen/icon_size_small"
+                android:src="@drawable/ic_results"
+                android:tint="@color/colorPrimary"
+                android:contentDescription="@string/my_results" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/my_results"
+                android:textSize="@dimen/text_nav_label"
+                android:textColor="@color/colorPrimary"
+                android:layout_marginTop="@dimen/margin_extra_small" />
+        </LinearLayout>
+    </LinearLayout>
 </RelativeLayout>

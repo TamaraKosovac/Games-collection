@@ -3,29 +3,33 @@ package com.example.mozgalica.activities;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
-import android.widget.TextView;
-
 import androidx.appcompat.app.AppCompatActivity;
 
 import com.example.mozgalica.R;
 
 public class MainMenuActivity extends AppCompatActivity {
 
-    private TextView tvWelcome;
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main_menu);
+
         if (android.os.Build.VERSION.SDK_INT >= android.os.Build.VERSION_CODES.LOLLIPOP) {
             getWindow().setStatusBarColor(getResources().getColor(R.color.colorPrimaryVariant));
         }
 
-        tvWelcome = findViewById(R.id.tvWelcome);
-        String username = getIntent().getStringExtra("USERNAME");
+        findViewById(R.id.btnBack).setOnClickListener(v -> finish());
 
-        tvWelcome.setText(getString(R.string.welcome, username));
+        findViewById(R.id.navHome).setOnClickListener(v ->
+                startActivity(new Intent(this, HomeActivity.class)));
+
+        findViewById(R.id.navGames).setOnClickListener(v ->
+                startActivity(new Intent(this, MainMenuActivity.class)));
+
+        findViewById(R.id.navResults).setOnClickListener(v ->
+                startActivity(new Intent(this, HistoryActivity.class)));
     }
+
     public void onPlayTicTacToe(View view) {
         startActivity(new Intent(this, TicTacToeActivity.class));
     }
@@ -38,20 +42,7 @@ public class MainMenuActivity extends AppCompatActivity {
         startActivity(new Intent(this, SudokuActivity.class));
     }
 
-    public void onShowHistory(View view) {
-        Intent intent = new Intent(this, HistoryActivity.class);
-        intent.putExtra("USERNAME", getIntent().getStringExtra("USERNAME"));
-        startActivity(intent);
-    }
-
     public void onSettings(View view) {
         startActivity(new Intent(this, SettingsActivity.class));
-    }
-
-    public void onLogout(View view) {
-        Intent intent = new Intent(this, LoginActivity.class);
-        intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TASK); // očisti backstack
-        startActivity(intent);
-        finish();
     }
 }

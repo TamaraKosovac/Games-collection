@@ -1,69 +1,93 @@
-<?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
-    android:id="@+id/main"
-    android:orientation="vertical"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent">
 
     <RelativeLayout
-        android:id="@+id/customToolbar"
+        android:id="@+id/topNavBar"
         android:layout_width="match_parent"
         android:layout_height="?attr/actionBarSize"
-        android:background="@color/colorPrimary">
-
-        <ImageView
-            android:id="@+id/btnBack"
-            android:layout_width="@dimen/icon_size_nav"
-            android:layout_height="@dimen/icon_size_nav"
-            android:layout_centerVertical="true"
-            android:layout_alignParentStart="true"
-            android:layout_marginStart="@dimen/margin_medium"
-            android:src="@drawable/ic_back"
-            android:tint="@color/colorOnPrimary"
-            android:contentDescription="@string/back"
-            android:clickable="true"
-            android:focusable="true" />
+        android:background="@color/colorPrimary"
+        android:layout_alignParentTop="true">
 
         <TextView
-            android:id="@+id/tvToolbarTitle"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="@string/settings"
+            android:id="@+id/tvTitle"
+            android:text="@string/home"
+            android:textColor="@color/colorOnPrimary"
             android:textSize="@dimen/title_text_size"
             android:textStyle="bold"
-            android:textColor="@color/colorOnPrimary"
             android:layout_centerVertical="true"
-            android:layout_toEndOf="@id/btnBack"
-            android:layout_marginStart="@dimen/margin_title_start" />
-    </RelativeLayout>
-
-    <LinearLayout
-        android:orientation="vertical"
-        android:gravity="center"
-        android:layout_width="match_parent"
-        android:layout_height="0dp"
-        android:layout_weight="1">
-
-        <Button
-            android:id="@+id/btnChangeLanguage"
-            android:text="@string/change_language"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="@dimen/margin_large"
-            android:layout_marginBottom="@dimen/margin_medium" />
-
-        <Button
-            android:id="@+id/btnLogout"
-            android:text="@string/logout"
+            android:layout_marginStart="@dimen/margin_medium"
+            android:layout_alignParentStart="true"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content" />
-    </LinearLayout>
+
+        <ImageView
+            android:id="@+id/btnSettingsIcon"
+            android:layout_width="@dimen/icon_size_nav"
+            android:layout_height="@dimen/icon_size_nav"
+            android:src="@drawable/ic_settings"
+            android:layout_centerVertical="true"
+            android:contentDescription="@string/settings"
+            android:tint="@color/colorOnPrimary"
+            android:layout_marginEnd="@dimen/margin_medium"
+            android:layout_alignParentEnd="true"
+            android:clickable="true"
+            android:focusable="true" />
+    </RelativeLayout>
+
+    <ImageView
+        android:id="@+id/logoImage"
+        android:layout_width="@dimen/logo_size"
+        android:layout_height="@dimen/logo_size"
+        android:src="@drawable/ic_launcher_foreground"
+        android:layout_below="@id/topNavBar"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="@dimen/margin_large"
+        android:contentDescription="@string/app_name" />
+
+    <TextView
+        android:id="@+id/tvWelcome"
+        android:textSize="@dimen/text_welcome_size"
+        android:textColor="@color/colorPrimary"
+        android:layout_below="@id/logoImage"
+        android:layout_marginTop="@dimen/margin_medium"
+        android:layout_centerHorizontal="true"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content" />
+
+    <Button
+        android:id="@+id/btnGoToGames"
+        android:text="@string/games"
+        style="@style/MozgalicaButton"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/tvWelcome"
+        android:layout_marginTop="@dimen/margin_very_large"
+        android:layout_marginStart="@dimen/margin_large"
+        android:layout_marginEnd="@dimen/margin_large"
+        android:layout_centerHorizontal="true" />
+
+    <Button
+        android:id="@+id/btnMyResults"
+        android:text="@string/my_results"
+        style="@style/MozgalicaSecondaryButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/btnGoToGames"
+        android:layout_marginTop="@dimen/margin_medium"
+        android:layout_centerHorizontal="true" />
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/divider_height"
+        android:layout_alignParentBottom="true"
+        android:background="@android:color/darker_gray" />
 
     <LinearLayout
         android:id="@+id/bottomNavBar"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
         android:orientation="horizontal"
         android:background="@android:color/white"
         android:paddingTop="@dimen/nav_padding_vertical"
@@ -149,4 +173,4 @@
                 android:layout_marginTop="@dimen/margin_extra_small" />
         </LinearLayout>
     </LinearLayout>
-</LinearLayout>
+</RelativeLayout>

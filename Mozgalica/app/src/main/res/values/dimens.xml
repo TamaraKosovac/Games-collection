@@ -24,4 +24,13 @@
     <dimen name="title_text_size">24sp</dimen>
     <dimen name="game_button_top_margin">40dp</dimen>
     <dimen name="navbar_height">56dp</dimen>
+
+    <dimen name="margin_extra_small">2dp</dimen>
+    <dimen name="margin_title_start">15dp</dimen>
+    <dimen name="text_nav_label">12sp</dimen>
+    <dimen name="nav_padding_vertical">6dp</dimen>
+
+    <dimen name="text_welcome_size">18sp</dimen>
+    <dimen name="margin_very_large">32dp</dimen>
+    <dimen name="divider_height">1dp</dimen>
 </resources>
