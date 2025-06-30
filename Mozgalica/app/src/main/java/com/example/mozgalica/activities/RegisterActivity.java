@@ -5,6 +5,7 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.ImageButton;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -15,7 +16,6 @@ import com.example.mozgalica.database.DatabaseHelper;
 import com.example.mozgalica.models.User;
 import com.example.mozgalica.utils.Validator;
 import android.text.InputType;
-import android.widget.ImageView;
 
 
 public class RegisterActivity extends AppCompatActivity {
@@ -23,7 +23,8 @@ public class RegisterActivity extends AppCompatActivity {
     private EditText etFullName, etUsername, etPassword;
     private Button btnRegister;
     private DatabaseHelper dbHelper;
-    private ImageView ivTogglePassword;
+    private ImageButton ivTogglePassword;
+
     private boolean isPasswordVisible = false;
 
     @Override
