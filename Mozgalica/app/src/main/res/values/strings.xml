@@ -22,6 +22,9 @@
     <string name="play_tic_tac_toe">Play Tic-Tac-Toe</string>
     <string name="play_memory_match">Play Memory Match</string>
     <string name="play_sudoku">Play Sudoku</string>
+    <string name="tic_tac_toe">Tic-Tac-Toe</string>
+    <string name="memory_match">Memory Match</string>
+    <string name="sudoku">Sudoku</string>
     <string name="my_results">Results</string>
     <string name="back">Back</string>
     <string name="logout">Logout</string>
@@ -43,5 +46,6 @@
     <string name="sudoku_scoring">Time-based scoring: faster = more points</string>
 
     <string name="watch_video">Watch Video Tutorial</string>
+    <string name="card">Card</string>
 
 </resources>

@@ -6,7 +6,7 @@
 
     <LinearLayout
         android:orientation="vertical"
-        android:padding="@dimen/main_padding"
+        android:padding="@dimen/margin_large"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:gravity="center_horizontal">
@@ -26,7 +26,7 @@
             android:layout_height="wrap_content"
             android:text="@string/app_name"
             android:textAppearance="@style/MozgalicaTitle"
-            android:layout_marginTop="@dimen/title_margin_top"
+            android:layout_marginTop="@dimen/margin_small"
             android:layout_marginBottom="@dimen/margin_large" />
 
         <EditText
@@ -60,15 +60,15 @@
                 android:autofillHints="password"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:paddingEnd="@dimen/padding_end_icon" />
+                android:paddingEnd="@dimen/input_min_height" />
 
             <ImageButton
                 android:id="@+id/ivTogglePassword"
-                android:layout_width="@dimen/icon_size_small"
-                android:layout_height="@dimen/icon_size_small"
+                android:layout_width="@dimen/margin_large"
+                android:layout_height="@dimen/margin_large"
                 android:layout_alignParentEnd="true"
                 android:layout_centerVertical="true"
-                android:layout_marginEnd="@dimen/icon_margin_end"
+                android:layout_marginEnd="@dimen/input_spacing_vertical"
                 android:src="@drawable/visibility_off"
                 android:tint="@color/colorPrimary"
                 android:background="@android:color/transparent"

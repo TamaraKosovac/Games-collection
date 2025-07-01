@@ -22,6 +22,9 @@
     <string name="play_tic_tac_toe">Iks-Oks</string>
     <string name="play_memory_match">Igra Memorije</string>
     <string name="play_sudoku">Sudoku</string>
+    <string name="tic_tac_toe">Tic-Tac-Toe</string>
+    <string name="memory_match">Igra Memorije</string>
+    <string name="sudoku">Sudoku</string>
     <string name="my_results">Rezultati</string>
     <string name="back">Nazad</string>
     <string name="logout">Odjavi se</string>
@@ -43,5 +46,6 @@
     <string name="sudoku_scoring">Bodovanje po vremenu: brže = više poena</string>
 
     <string name="watch_video">Pogledaj video tutorijal</string>
+    <string name="card">Kartica</string>
 
 </resources>

@@ -1,6 +1,8 @@
 package com.example.mozgalica.activities;
 
+import android.content.Intent;
 import android.os.Bundle;
+import android.view.View;
 
 import androidx.activity.EdgeToEdge;
 import androidx.appcompat.app.AppCompatActivity;
@@ -17,10 +19,30 @@ public class MemoryMatchActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         EdgeToEdge.enable(this);
         setContentView(R.layout.activity_memory_match);
+
+        if (android.os.Build.VERSION.SDK_INT >= android.os.Build.VERSION_CODES.LOLLIPOP) {
+            getWindow().setStatusBarColor(getResources().getColor(R.color.colorPrimaryVariant));
+        }
+
         ViewCompat.setOnApplyWindowInsetsListener(findViewById(R.id.main), (v, insets) -> {
             Insets systemBars = insets.getInsets(WindowInsetsCompat.Type.systemBars());
             v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom);
             return insets;
         });
+
+        findViewById(R.id.btnBack).setOnClickListener(v -> finish());
+
+        findViewById(R.id.navHome).setOnClickListener(v ->
+                startActivity(new Intent(this, HomeActivity.class)));
+
+        findViewById(R.id.navGames).setOnClickListener(v ->
+                startActivity(new Intent(this, MainMenuActivity.class)));
+
+        findViewById(R.id.navResults).setOnClickListener(v ->
+                startActivity(new Intent(this, HistoryActivity.class)));
+    }
+
+    public void onSettings(View view) {
+        startActivity(new Intent(this, SettingsActivity.class));
     }
 }

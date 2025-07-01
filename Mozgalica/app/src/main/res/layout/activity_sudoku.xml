@@ -1,10 +1,167 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:id="@+id/main"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@color/colorSurface"
     tools:context=".activities.SudokuActivity">
+
+    <RelativeLayout
+        android:id="@+id/topNavBar"
+        android:layout_width="@dimen/zero_width"
+        android:layout_height="?attr/actionBarSize"
+        android:background="@color/colorPrimary"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent">
+
+        <ImageView
+            android:id="@+id/btnBack"
+            android:layout_width="@dimen/icon_size_nav"
+            android:layout_height="@dimen/icon_size_nav"
+            android:layout_centerVertical="true"
+            android:layout_marginStart="@dimen/margin_medium"
+            android:layout_alignParentStart="true"
+            android:src="@drawable/ic_back"
+            android:tint="@color/colorOnPrimary"
+            android:contentDescription="@string/back"
+            android:clickable="true"
+            android:focusable="true"
+            android:onClick="onBackPressed" />
+
+        <TextView
+            android:id="@+id/tvTitleToolbar"
+            android:text="@string/sudoku"
+            android:textColor="@color/colorOnPrimary"
+            android:textSize="@dimen/title_text_size"
+            android:textStyle="bold"
+            android:layout_centerVertical="true"
+            android:layout_toEndOf="@id/btnBack"
+            android:layout_marginStart="@dimen/margin_title_start"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+
+        <ImageView
+            android:id="@+id/btnSettingsIcon"
+            android:layout_width="@dimen/icon_size_nav"
+            android:layout_height="@dimen/icon_size_nav"
+            android:src="@drawable/ic_settings"
+            android:layout_centerVertical="true"
+            android:layout_alignParentEnd="true"
+            android:layout_marginEnd="@dimen/margin_medium"
+            android:tint="@color/colorOnPrimary"
+            android:contentDescription="@string/settings"
+            android:clickable="true"
+            android:focusable="true"
+            android:onClick="onSettings" />
+    </RelativeLayout>
+
+    <GridLayout
+        android:id="@+id/sudokuGrid"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:rowCount="9"
+        android:columnCount="9"
+        android:layout_margin="@dimen/margin_medium"
+        app:layout_constraintTop_toBottomOf="@id/topNavBar"
+        app:layout_constraintBottom_toTopOf="@id/bottomNavBar"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent" />
+
+    <LinearLayout
+        android:id="@+id/bottomNavBar"
+        android:layout_width="@dimen/zero_width"
+        android:layout_height="@dimen/navbar_height"
+        android:orientation="horizontal"
+        android:background="@android:color/white"
+        android:paddingTop="@dimen/nav_padding_vertical"
+        android:paddingBottom="@dimen/nav_padding_vertical"
+        android:weightSum="3"
+        android:gravity="center"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent">
+
+        <LinearLayout
+            android:id="@+id/navHome"
+            android:layout_width="@dimen/zero_width"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:orientation="vertical"
+            android:gravity="center"
+            android:clickable="true"
+            android:focusable="true">
+
+            <ImageView
+                android:layout_width="@dimen/margin_large"
+                android:layout_height="@dimen/margin_large"
+                android:src="@drawable/ic_home"
+                android:tint="@color/colorPrimary"
+                android:contentDescription="@string/home" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/home"
+                android:textSize="@dimen/text_nav_label"
+                android:textColor="@color/colorPrimary"
+                android:layout_marginTop="@dimen/margin_extra_small" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/navGames"
+            android:layout_width="@dimen/zero_width"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:orientation="vertical"
+            android:gravity="center"
+            android:clickable="true"
+            android:focusable="true">
+
+            <ImageView
+                android:layout_width="@dimen/margin_large"
+                android:layout_height="@dimen/margin_large"
+                android:src="@drawable/ic_games"
+                android:tint="@color/colorPrimary"
+                android:contentDescription="@string/games" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/games"
+                android:textSize="@dimen/text_nav_label"
+                android:textColor="@color/colorPrimary"
+                android:layout_marginTop="@dimen/margin_extra_small" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/navResults"
+            android:layout_width="@dimen/zero_width"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:orientation="vertical"
+            android:gravity="center"
+            android:clickable="true"
+            android:focusable="true">
+
+            <ImageView
+                android:layout_width="@dimen/margin_large"
+                android:layout_height="@dimen/margin_large"
+                android:src="@drawable/ic_results"
+                android:tint="@color/colorPrimary"
+                android:contentDescription="@string/my_results" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/my_results"
+                android:textSize="@dimen/text_nav_label"
+                android:textColor="@color/colorPrimary"
+                android:layout_marginTop="@dimen/margin_extra_small" />
+        </LinearLayout>
+    </LinearLayout>
 
 </androidx.constraintlayout.widget.ConstraintLayout>

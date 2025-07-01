@@ -1,10 +1,188 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/main"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@color/colorSurface"
     tools:context=".activities.MemoryMatchActivity">
+
+    <RelativeLayout
+        android:id="@+id/topNavBar"
+        android:layout_width="@dimen/zero_width"
+        android:layout_height="?attr/actionBarSize"
+        android:background="@color/colorPrimary"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent">
+
+        <ImageView
+            android:id="@+id/btnBack"
+            android:layout_width="@dimen/icon_size_nav"
+            android:layout_height="@dimen/icon_size_nav"
+            android:layout_centerVertical="true"
+            android:layout_marginStart="@dimen/margin_medium"
+            android:layout_alignParentStart="true"
+            android:src="@drawable/ic_back"
+            android:tint="@color/colorOnPrimary"
+            android:contentDescription="@string/back"
+            android:clickable="true"
+            android:focusable="true"
+            android:onClick="onBackPressed" />
+
+        <TextView
+            android:id="@+id/tvTitleToolbar"
+            android:text="@string/memory_match"
+            android:textColor="@color/colorOnPrimary"
+            android:textSize="@dimen/title_text_size"
+            android:textStyle="bold"
+            android:layout_centerVertical="true"
+            android:layout_toEndOf="@id/btnBack"
+            android:layout_marginStart="@dimen/margin_title_start"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+
+        <ImageView
+            android:id="@+id/btnSettingsIcon"
+            android:layout_width="@dimen/icon_size_nav"
+            android:layout_height="@dimen/icon_size_nav"
+            android:src="@drawable/ic_settings"
+            android:layout_centerVertical="true"
+            android:layout_alignParentEnd="true"
+            android:layout_marginEnd="@dimen/margin_medium"
+            android:tint="@color/colorOnPrimary"
+            android:contentDescription="@string/settings"
+            android:clickable="true"
+            android:focusable="true"
+            android:onClick="onSettings" />
+    </RelativeLayout>
+
+    <GridLayout
+        android:id="@+id/memoryGrid"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:alignmentMode="alignMargins"
+        android:columnCount="4"
+        android:rowCount="4"
+        android:layout_margin="@dimen/margin_medium"
+        android:useDefaultMargins="true"
+        app:layout_constraintTop_toBottomOf="@id/topNavBar"
+        app:layout_constraintBottom_toTopOf="@id/bottomNavBar"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent">
+
+        <!-- 16 KARTICA -->
+        <ImageButton android:id="@+id/card_00" style="@style/MemoryCard" />
+        <ImageButton android:id="@+id/card_01" style="@style/MemoryCard" />
+        <ImageButton android:id="@+id/card_02" style="@style/MemoryCard" />
+        <ImageButton android:id="@+id/card_03" style="@style/MemoryCard" />
+        <ImageButton android:id="@+id/card_10" style="@style/MemoryCard" />
+        <ImageButton android:id="@+id/card_11" style="@style/MemoryCard" />
+        <ImageButton android:id="@+id/card_12" style="@style/MemoryCard" />
+        <ImageButton android:id="@+id/card_13" style="@style/MemoryCard" />
+        <ImageButton android:id="@+id/card_20" style="@style/MemoryCard" />
+        <ImageButton android:id="@+id/card_21" style="@style/MemoryCard" />
+        <ImageButton android:id="@+id/card_22" style="@style/MemoryCard" />
+        <ImageButton android:id="@+id/card_23" style="@style/MemoryCard" />
+        <ImageButton android:id="@+id/card_30" style="@style/MemoryCard" />
+        <ImageButton android:id="@+id/card_31" style="@style/MemoryCard" />
+        <ImageButton android:id="@+id/card_32" style="@style/MemoryCard" />
+        <ImageButton android:id="@+id/card_33" style="@style/MemoryCard" />
+    </GridLayout>
+
+    <LinearLayout
+        android:id="@+id/bottomNavBar"
+        android:layout_width="@dimen/zero_width"
+        android:layout_height="@dimen/navbar_height"
+        android:orientation="horizontal"
+        android:background="@android:color/white"
+        android:paddingTop="@dimen/nav_padding_vertical"
+        android:paddingBottom="@dimen/nav_padding_vertical"
+        android:weightSum="3"
+        android:gravity="center"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent">
+
+        <LinearLayout
+            android:id="@+id/navHome"
+            android:layout_width="@dimen/zero_width"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:orientation="vertical"
+            android:gravity="center"
+            android:clickable="true"
+            android:focusable="true">
+
+            <ImageView
+                android:layout_width="@dimen/margin_large"
+                android:layout_height="@dimen/margin_large"
+                android:src="@drawable/ic_home"
+                android:tint="@color/colorPrimary"
+                android:contentDescription="@string/home" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/home"
+                android:textSize="@dimen/text_nav_label"
+                android:textColor="@color/colorPrimary"
+                android:layout_marginTop="@dimen/margin_extra_small" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/navGames"
+            android:layout_width="@dimen/zero_width"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:orientation="vertical"
+            android:gravity="center"
+            android:clickable="true"
+            android:focusable="true">
+
+            <ImageView
+                android:layout_width="@dimen/margin_large"
+                android:layout_height="@dimen/margin_large"
+                android:src="@drawable/ic_games"
+                android:tint="@color/colorPrimary"
+                android:contentDescription="@string/games" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/games"
+                android:textSize="@dimen/text_nav_label"
+                android:textColor="@color/colorPrimary"
+                android:layout_marginTop="@dimen/margin_extra_small" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/navResults"
+            android:layout_width="@dimen/zero_width"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:orientation="vertical"
+            android:gravity="center"
+            android:clickable="true"
+            android:focusable="true">
+
+            <ImageView
+                android:layout_width="@dimen/margin_large"
+                android:layout_height="@dimen/margin_large"
+                android:src="@drawable/ic_results"
+                android:tint="@color/colorPrimary"
+                android:contentDescription="@string/my_results" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/my_results"
+                android:textSize="@dimen/text_nav_label"
+                android:textColor="@color/colorPrimary"
+                android:layout_marginTop="@dimen/margin_extra_small" />
+        </LinearLayout>
+    </LinearLayout>
 
 </androidx.constraintlayout.widget.ConstraintLayout>

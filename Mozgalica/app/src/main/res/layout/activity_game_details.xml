@@ -55,7 +55,7 @@
         android:layout_above="@id/bottomNavBar"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:padding="@dimen/main_padding">
+        android:padding="@dimen/margin_large">
 
         <LinearLayout
             android:orientation="vertical"
@@ -97,7 +97,7 @@
 
     <View
         android:layout_width="match_parent"
-        android:layout_height="@dimen/divider_height"
+        android:layout_height="@dimen/margin_small"
         android:layout_alignParentBottom="true"
         android:background="@android:color/darker_gray" />
 
@@ -124,8 +124,8 @@
             android:focusable="true">
 
             <ImageView
-                android:layout_width="@dimen/icon_size_small"
-                android:layout_height="@dimen/icon_size_small"
+                android:layout_width="@dimen/margin_large"
+                android:layout_height="@dimen/margin_large"
                 android:src="@drawable/ic_home"
                 android:tint="@color/colorPrimary"
                 android:contentDescription="@string/home" />
@@ -141,7 +141,7 @@
 
         <LinearLayout
             android:id="@+id/navGames"
-            android:layout_width="0dp"
+            android:layout_width="@dimen/zero_width"
             android:layout_height="wrap_content"
             android:layout_weight="1"
             android:orientation="vertical"
@@ -150,8 +150,8 @@
             android:focusable="true">
 
             <ImageView
-                android:layout_width="@dimen/icon_size_small"
-                android:layout_height="@dimen/icon_size_small"
+                android:layout_width="@dimen/margin_large"
+                android:layout_height="@dimen/margin_large"
                 android:src="@drawable/ic_games"
                 android:tint="@color/colorPrimary"
                 android:contentDescription="@string/games" />
@@ -167,7 +167,7 @@
 
         <LinearLayout
             android:id="@+id/navResults"
-            android:layout_width="0dp"
+            android:layout_width="@dimen/zero_width"
             android:layout_height="wrap_content"
             android:layout_weight="1"
             android:orientation="vertical"
@@ -176,8 +176,8 @@
             android:focusable="true">
 
             <ImageView
-                android:layout_width="@dimen/icon_size_small"
-                android:layout_height="@dimen/icon_size_small"
+                android:layout_width="@dimen/margin_large"
+                android:layout_height="@dimen/margin_large"
                 android:src="@drawable/ic_results"
                 android:tint="@color/colorPrimary"
                 android:contentDescription="@string/my_results" />
