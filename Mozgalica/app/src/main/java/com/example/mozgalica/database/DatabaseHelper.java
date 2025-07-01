@@ -8,8 +8,12 @@ import android.database.sqlite.SQLiteOpenHelper;
 import android.os.Handler;
 import android.widget.Toast;
 
+import com.example.mozgalica.models.GameResult;
 import com.example.mozgalica.models.User;
 import com.example.mozgalica.utils.Validator;
+
+import java.util.ArrayList;
+import java.util.List;
 
 public class DatabaseHelper extends SQLiteOpenHelper {
 
@@ -125,5 +129,46 @@ public class DatabaseHelper extends SQLiteOpenHelper {
         boolean exists = (cursor != null && cursor.moveToFirst());
         if (cursor != null) cursor.close();
         return exists;
+    }
+
+    public List<GameResult> getFilteredResults(String username, String game, String result, int minScore) {
+        List<GameResult> results = new ArrayList<>();
+        SQLiteDatabase db = getReadableDatabase();
+
+        String query = "SELECT * FROM results WHERE 1=1";
+        List<String> args = new ArrayList<>();
+
+        if (!username.isEmpty()) {
+            query += " AND username LIKE ?";
+            args.add("%" + username + "%");
+        }
+        if (!game.isEmpty()) {
+            query += " AND game LIKE ?";
+            args.add("%" + game + "%");
+        }
+        if (!result.isEmpty()) {
+            query += " AND result LIKE ?";
+            args.add("%" + result + "%");
+        }
+        query += " AND score >= ?";
+        args.add(String.valueOf(minScore));
+
+        Cursor cursor = db.rawQuery(query, args.toArray(new String[0]));
+        if (cursor.moveToFirst()) {
+            do {
+                GameResult r = new GameResult(
+                        cursor.getInt(cursor.getColumnIndexOrThrow("id")),
+                        cursor.getString(cursor.getColumnIndexOrThrow("username")),
+                        cursor.getString(cursor.getColumnIndexOrThrow("game")),
+                        cursor.getString(cursor.getColumnIndexOrThrow("result")),
+                        cursor.getInt(cursor.getColumnIndexOrThrow("score")),
+                        cursor.getString(cursor.getColumnIndexOrThrow("timestamp"))
+                );
+                results.add(r);
+            } while (cursor.moveToNext());
+        }
+
+        cursor.close();
+        return results;
     }
 }

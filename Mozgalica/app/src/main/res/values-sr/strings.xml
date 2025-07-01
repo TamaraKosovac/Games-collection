@@ -26,11 +26,13 @@
     <string name="memory_match">Igra Memorije</string>
     <string name="sudoku">Sudoku</string>
     <string name="my_results">Rezultati</string>
+    <string name="result">Rezultat</string>
     <string name="back">Nazad</string>
     <string name="logout">Odjavi se</string>
     <string name="change_language">Promijeni jezik</string>
     <string name="home">Početna</string>
     <string name="games">Igre</string>
+    <string name="game">Igra</string>
     <string name="select_language">Odaberi jezik</string>
     <string name="logout_success">Uspješna odjava!</string>
     <string name="view_details">Pogledaj Detalje Igre</string>
@@ -47,5 +49,8 @@
 
     <string name="watch_video">Pogledaj video tutorijal</string>
     <string name="card">Kartica</string>
+    <string name="time">Vrijeme</string>
+    <string name="score">Poeni</string>
+    <string name="search">Pretraži</string>
 
 </resources>
