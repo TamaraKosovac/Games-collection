@@ -3,6 +3,7 @@ package com.example.mozgalica.activities;
 import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
+import android.text.InputType;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ImageButton;
@@ -15,8 +16,6 @@ import com.example.mozgalica.R;
 import com.example.mozgalica.database.DatabaseHelper;
 import com.example.mozgalica.models.User;
 import com.example.mozgalica.utils.Validator;
-import android.text.InputType;
-
 
 public class RegisterActivity extends AppCompatActivity {
 
@@ -24,7 +23,6 @@ public class RegisterActivity extends AppCompatActivity {
     private Button btnRegister;
     private DatabaseHelper dbHelper;
     private ImageButton ivTogglePassword;
-
     private boolean isPasswordVisible = false;
 
     @Override
@@ -84,17 +82,16 @@ public class RegisterActivity extends AppCompatActivity {
             String hashedPassword = Validator.hashPassword(password);
             User user = new User(username, hashedPassword, fullName);
 
-            boolean success = dbHelper.addUser(user);
-
-            if (success) {
-                Toast.makeText(this, getString(R.string.registration_success), Toast.LENGTH_SHORT).show();
-                Intent intent = new Intent(this, LoginActivity.class);
-                startActivity(intent);
-                finish();
-            }
-            else {
-                Toast.makeText(this, getString(R.string.username_exists), Toast.LENGTH_SHORT).show();
-            }
+            dbHelper.addUserAsync(
+                    user,
+                    () -> {
+                        Toast.makeText(this, getString(R.string.registration_success), Toast.LENGTH_SHORT).show();
+                        Intent intent = new Intent(this, LoginActivity.class);
+                        startActivity(intent);
+                        finish();
+                    },
+                    () -> Toast.makeText(this, getString(R.string.username_exists), Toast.LENGTH_SHORT).show()
+            );
         });
 
         TextView tvGoToLogin = findViewById(R.id.tvGoToLogin);

@@ -34,8 +34,11 @@ public class HomeActivity extends AppCompatActivity {
             tvWelcome.setText(welcomeText);
         }
 
-        findViewById(R.id.btnGoToGames).setOnClickListener(v ->
-                startActivity(new Intent(this, MainMenuActivity.class)));
+        findViewById(R.id.btnGoToGames).setOnClickListener(v -> {
+            Intent intent = new Intent(this, MainMenuActivity.class);
+            intent.putExtra("USERNAME", username);
+            startActivity(intent);
+        });
 
         findViewById(R.id.btnMyResults).setOnClickListener(v ->
                 startActivity(new Intent(this, HistoryActivity.class)));

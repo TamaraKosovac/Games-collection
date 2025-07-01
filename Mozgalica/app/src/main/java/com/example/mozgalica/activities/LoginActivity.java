@@ -3,8 +3,10 @@ package com.example.mozgalica.activities;
 import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
+import android.text.InputType;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -12,9 +14,6 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import com.example.mozgalica.R;
 import com.example.mozgalica.database.DatabaseHelper;
-import android.text.InputType;
-import android.widget.ImageView;
-
 
 public class LoginActivity extends AppCompatActivity {
 
@@ -45,7 +44,6 @@ public class LoginActivity extends AppCompatActivity {
         etLoginPassword = findViewById(R.id.etLoginPassword);
         btnLogin = findViewById(R.id.btnLogin);
         tvGoToRegister = findViewById(R.id.tvGoToRegister);
-
         ivToggleLoginPassword = findViewById(R.id.ivToggleLoginPassword);
 
         ivToggleLoginPassword.setOnClickListener(v -> {
@@ -69,17 +67,18 @@ public class LoginActivity extends AppCompatActivity {
                 return;
             }
 
-            if (dbHelper.checkUser(username, password)) {
-                Toast.makeText(this, getString(R.string.login_success), Toast.LENGTH_SHORT).show();
-
-                Intent intent = new Intent(this, HomeActivity.class);
-                intent.putExtra("USERNAME", username);
-                startActivity(intent);
-                finish();
-            } else {
-                Toast.makeText(this, getString(R.string.login_failed), Toast.LENGTH_SHORT).show();
-            }
-
+            dbHelper.checkUserAsync(
+                    username,
+                    password,
+                    () -> {
+                        Toast.makeText(this, getString(R.string.login_success), Toast.LENGTH_SHORT).show();
+                        Intent intent = new Intent(this, HomeActivity.class);
+                        intent.putExtra("USERNAME", username);
+                        startActivity(intent);
+                        finish();
+                    },
+                    () -> Toast.makeText(this, getString(R.string.login_failed), Toast.LENGTH_SHORT).show()
+            );
         });
 
         tvGoToRegister.setText(getString(R.string.go_to_register));
