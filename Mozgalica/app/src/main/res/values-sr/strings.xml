@@ -37,21 +37,18 @@
     <string name="logout_success">Uspješna odjava!</string>
     <string name="view_details">Pogledaj Detalje Igre</string>
     <string name="game_details">Detalji Igre</string>
-
-    <string name="tictactoe_rules">Igrači naizmjenično postavljaju X ili O. Prvi koji poreda 3 pobjeđuje.</string>
-    <string name="tictactoe_scoring">+10 za pobjedu, 0 za neriješeno, -5 za poraz</string>
-
-    <string name="memory_rules">Pronađi parove među promiješanim karticama.</string>
-    <string name="memory_scoring">+5 za svaki par, -2 za pogrešan pokušaj</string>
-
-    <string name="sudoku_rules">Popuni mrežu tako da svaki red, kolona i blok sadrže brojeve od 1 do 9.</string>
-    <string name="sudoku_scoring">Bodovanje po vremenu: brže = više poena</string>
-
+    <string name="rules">Pravila</string>
+    <string name="scoring">Bodovanje</string>
+    <string name="tic_tac_toe_rules">Igra se na mreži 3x3. Igrač igra protiv AI, te naizmjenično postavljaju X i O. Cilj je da prvi postavi tri ista simbola u nizu – vodoravno, uspravno ili dijagonalno.</string>
+    <string name="tic_tac_toe_scoring">Igrač dobija 100 poena za pobjedu, 50 poena ako je rezultat neriješen, a 0 poena za poraz.</string>
+    <string name="memory_rules">Na mreži 4x4 nalazi se 8 parova skrivenih kartica. Igrač otkriva po dvije kartice – ako su iste, ostaju otkrivene. Cilj je pronaći sve parove u što manje poteza.</string>
+    <string name="memory_scoring">Igrač dobija 100 poena ako pronađe sve parove u 16 do 20 poteza, 80 poena za 21 do 25 poteza, 60 poena za 26 do 30 poteza i 40 poena ako mu je potrebno više od 30 poteza.</string>
+    <string name="sudoku_rules">Igrač treba da popuni mrežu 9x9 tako da svaki red, kolona i svaki 3x3 kvadrat sadrže brojeve od 1 do 9 – bez ponavljanja.</string>
+    <string name="sudoku_scoring">Igrač dobija 100 poena ako riješi Sudoku za manje od 5 minuta, 80 poena za vrijeme između 5 i 10 minuta, 60 poena ako riješi između 10 i 15 minuta, a 40 poena za više od 15 minuta. Ako Sudoku nije riješen ili je netačan, igrač ne dobija poene.</string>
     <string name="watch_video">Pogledaj video tutorijal</string>
     <string name="card">Kartica</string>
     <string name="time">Vrijeme</string>
     <string name="score">Poeni</string>
     <string name="search">Pretraži</string>
     <string name="reset">Resetuj</string>
-
 </resources>

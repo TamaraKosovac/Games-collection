@@ -33,27 +33,30 @@ public class GameDetailsActivity extends AppCompatActivity {
 
         switch (game) {
             case "TicTacToe":
-                tvTitle.setText("Tic-Tac-Toe");
-                tvRules.setText(R.string.tictactoe_rules);
-                tvScoring.setText(R.string.tictactoe_scoring);
+                tvTitle.setText(R.string.tic_tac_toe);
+                tvRules.setText(R.string.tic_tac_toe_rules);
+                tvScoring.setText(R.string.tic_tac_toe_scoring);
                 btnWatchVideo.setOnClickListener(v -> openYoutube("https://www.youtube.com/watch?v=3qzcAMShotQ"));
                 break;
 
             case "MemoryMatch":
-                tvTitle.setText("Memory Match");
+                tvTitle.setText(R.string.memory_match);
                 tvRules.setText(R.string.memory_rules);
                 tvScoring.setText(R.string.memory_scoring);
                 btnWatchVideo.setOnClickListener(v -> openYoutube("https://www.youtube.com/watch?v=oFfYmrGeTPs"));
                 break;
 
             case "Sudoku":
-                tvTitle.setText("Sudoku");
+                tvTitle.setText(R.string.sudoku);
                 tvRules.setText(R.string.sudoku_rules);
                 tvScoring.setText(R.string.sudoku_scoring);
                 btnWatchVideo.setOnClickListener(v -> openYoutube("https://www.youtube.com/watch?v=8zRXDsGydeQ"));
                 break;
         }
         findViewById(R.id.btnBack).setOnClickListener(v -> finish());
+
+        findViewById(R.id.btnSettingsIcon).setOnClickListener(v ->
+                startActivity(new Intent(this, SettingsActivity.class)));
 
         findViewById(R.id.navHome).setOnClickListener(v ->
                 startActivity(new Intent(this, HomeActivity.class)));

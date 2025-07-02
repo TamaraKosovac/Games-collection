@@ -1,6 +1,7 @@
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
 
     <RelativeLayout
         android:id="@+id/topNavBar"
@@ -67,32 +68,105 @@
                 android:textSize="@dimen/title_text_size"
                 android:textStyle="bold"
                 android:layout_marginBottom="@dimen/margin_medium"
-                android:text="Game Title"
+                android:text="@string/game"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content" />
 
-            <TextView
-                android:id="@+id/tvRules"
-                android:textSize="@dimen/text_welcome_size"
+            <androidx.cardview.widget.CardView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
                 android:layout_marginBottom="@dimen/margin_medium"
-                android:text="Rules..."
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content" />
+                app:cardCornerRadius="@dimen/input_spacing_vertical"
+                app:cardElevation="@dimen/nav_padding_vertical">
 
-            <TextView
-                android:id="@+id/tvScoring"
-                android:textSize="@dimen/text_welcome_size"
+                <LinearLayout
+                    android:orientation="vertical"
+                    android:padding="@dimen/margin_medium"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+
+                    <LinearLayout
+                        android:orientation="horizontal"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginBottom="@dimen/game_button_details_margin"
+                        android:gravity="center_vertical">
+
+                        <ImageView
+                            android:layout_width="@dimen/icon_on_card_size"
+                            android:layout_height="@dimen/icon_on_card_size"
+                            android:src="@drawable/ic_rules"
+                            app:tint="@color/colorPrimary"
+                            android:layout_marginEnd="@dimen/game_button_details_margin"
+                            android:contentDescription="@string/rules" />
+
+                        <TextView
+                            android:text="@string/rules"
+                            android:textStyle="bold"
+                            android:textSize="@dimen/details_card"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content" />
+                    </LinearLayout>
+
+                    <TextView
+                        android:id="@+id/tvRules"
+                        android:textSize="@dimen/text_welcome_size"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content" />
+                </LinearLayout>
+            </androidx.cardview.widget.CardView>
+
+            <androidx.cardview.widget.CardView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
                 android:layout_marginBottom="@dimen/margin_large"
-                android:text="Scoring..."
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content" />
+                app:cardCornerRadius="@dimen/input_spacing_vertical"
+                app:cardElevation="@dimen/nav_padding_vertical">
+
+                <LinearLayout
+                    android:orientation="vertical"
+                    android:padding="@dimen/margin_medium"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+
+                    <LinearLayout
+                        android:orientation="horizontal"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginBottom="@dimen/game_button_details_margin"
+                        android:gravity="center_vertical">
+
+                        <ImageView
+                            android:layout_width="@dimen/icon_on_card_size"
+                            android:layout_height="@dimen/icon_on_card_size"
+                            android:src="@drawable/ic_score"
+                            app:tint="@color/colorPrimary"
+                            android:layout_marginEnd="@dimen/game_button_details_margin"
+                            android:contentDescription="@string/scoring" />
+
+                        <TextView
+                            android:text="@string/scoring"
+                            android:textStyle="bold"
+                            android:textSize="@dimen/details_card"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content" />
+                    </LinearLayout>
+
+                    <TextView
+                        android:id="@+id/tvScoring"
+                        android:textSize="@dimen/text_welcome_size"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content" />
+                </LinearLayout>
+            </androidx.cardview.widget.CardView>
 
             <Button
                 android:id="@+id/btnWatchVideo"
                 android:text="@string/watch_video"
                 android:layout_width="wrap_content"
-                android:layout_height="wrap_content"/>
+                android:layout_height="wrap_content" />
         </LinearLayout>
+
     </ScrollView>
 
     <View
@@ -115,7 +189,7 @@
 
         <LinearLayout
             android:id="@+id/navHome"
-            android:layout_width="0dp"
+            android:layout_width="@dimen/zero_width"
             android:layout_height="wrap_content"
             android:layout_weight="1"
             android:orientation="vertical"

@@ -37,21 +37,18 @@
     <string name="logout_success">Logout successful!</string>
     <string name="view_details">View Game Details</string>
     <string name="game_details">Game Details</string>
-
-    <string name="tictactoe_rules">Players take turns placing X or O. First to align 3 wins.</string>
-    <string name="tictactoe_scoring">+10 for win, 0 for draw, -5 for loss</string>
-
-    <string name="memory_rules">Find matching pairs among shuffled cards.</string>
-    <string name="memory_scoring">+5 per match, -2 per failed try</string>
-
-    <string name="sudoku_rules">Fill the grid so each row, column, and block has digits 1-9.</string>
-    <string name="sudoku_scoring">Time-based scoring: faster = more points</string>
-
+    <string name="rules">Rules</string>
+    <string name="scoring">Scoring</string>
+    <string name="tic_tac_toe_rules">The game is played on a 3x3 grid. The player plays against the AI, taking turns placing X and O. The goal is to be the first to get three identical symbols in a row — horizontally, vertically, or diagonally.</string>
+    <string name="tic_tac_toe_scoring">The player earns 100 points for a win, 50 points for a draw, and 0 points for a loss.</string>
+    <string name="memory_rules">A 4x4 grid contains 8 pairs of hidden cards. The player flips two cards at a time — if they match, they remain revealed. The goal is to find all pairs in as few moves as possible.</string>
+    <string name="memory_scoring">The player earns 100 points for finding all pairs in 16 to 20 moves, 80 points for 21 to 25 moves, 60 points for 26 to 30 moves, and 40 points if more than 30 moves are needed.</string>
+    <string name="sudoku_rules">The player must fill a 9x9 grid so that each row, column, and each 3x3 square contains the numbers from 1 to 9 — with no repetitions.</string>
+    <string name="sudoku_scoring">The player earns 100 points for solving the Sudoku in under 5 minutes, 80 points for a time between 5 and 10 minutes, 60 points for solving it in 10 to 15 minutes, and 40 points for more than 15 minutes. If the Sudoku is not solved or contains errors, the player receives no points.</string>
     <string name="watch_video">Watch Video Tutorial</string>
     <string name="card">Card</string>
     <string name="time">Time</string>
     <string name="score">Score</string>
     <string name="search">Search</string>
     <string name="reset">Reset</string>
-
 </resources>

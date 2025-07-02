@@ -25,4 +25,6 @@
     <dimen name="tic_tac_toe_cell_size">100dp</dimen>
     <dimen name="gravity">36sp</dimen>
     <dimen name="zero_width">0dp</dimen>
+    <dimen name="details_card">16sp</dimen>
+    <dimen name="icon_on_card_size">20dp</dimen>
 </resources>
