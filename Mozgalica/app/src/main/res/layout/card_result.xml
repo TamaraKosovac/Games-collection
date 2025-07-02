@@ -1,47 +1,58 @@
 <?xml version="1.0" encoding="utf-8"?>
 <com.google.android.material.card.MaterialCardView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    android:layout_margin="8dp"
-    android:padding="12dp"
-    android:elevation="4dp"
+    android:layout_margin="@dimen/game_button_details_margin"
+    android:elevation="@dimen/card_elevation"
+    app:cardCornerRadius="@dimen/input_spacing_vertical"
     android:backgroundTint="@color/colorOnPrimary">
 
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:orientation="vertical">
+        android:orientation="horizontal"
+        android:padding="@dimen/input_spacing_vertical"
+        android:gravity="center_vertical">
+
+        <ImageView
+            android:layout_width="@dimen/margin_large"
+            android:layout_height="@dimen/margin_large"
+            android:src="@drawable/ic_user"
+            android:tint="@color/colorPrimary"
+            android:layout_marginEnd="@dimen/input_spacing_vertical"
+            android:contentDescription="@string/user" />
 
         <TextView
             android:id="@+id/tvUsername"
-            android:text="@string/username"
             android:textStyle="bold"
-            android:textSize="16sp"
+            android:textSize="@dimen/button_text"
             android:layout_width="wrap_content"
-            android:layout_height="wrap_content" />
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="@dimen/input_spacing_vertical" />
 
         <TextView
             android:id="@+id/tvGame"
-            android:text="@string/game"
             android:layout_width="wrap_content"
-            android:layout_height="wrap_content" />
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="@dimen/input_spacing_vertical" />
 
         <TextView
             android:id="@+id/tvResult"
-            android:text="@string/result"
             android:layout_width="wrap_content"
-            android:layout_height="wrap_content" />
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="@dimen/input_spacing_vertical" />
 
         <TextView
             android:id="@+id/tvScore"
-            android:text="@string/score"
             android:layout_width="wrap_content"
-            android:layout_height="wrap_content" />
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="@dimen/input_spacing_vertical" />
 
         <TextView
             android:id="@+id/tvTimestamp"
-            android:text="@string/time"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content" />
+
     </LinearLayout>
 </com.google.android.material.card.MaterialCardView>

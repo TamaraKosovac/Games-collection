@@ -59,23 +59,23 @@
         android:id="@+id/btnGoToGames"
         android:text="@string/games"
         style="@style/MozgalicaButton"
-        android:layout_width="match_parent"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_below="@id/tvWelcome"
-        android:layout_marginTop="@dimen/margin_very_large"
-        android:layout_marginStart="@dimen/margin_large"
-        android:layout_marginEnd="@dimen/margin_large"
-        android:layout_centerHorizontal="true" />
+        android:layout_marginTop="@dimen/tic_tac_toe_cell_size"
+        android:layout_centerHorizontal="true"
+        android:minWidth="@dimen/menu_button_size"/>
 
     <Button
         android:id="@+id/btnMyResults"
         android:text="@string/my_results"
-        style="@style/MozgalicaSecondaryButton"
+        style="@style/MozgalicaReverseButton"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_below="@id/btnGoToGames"
         android:layout_marginTop="@dimen/margin_medium"
-        android:layout_centerHorizontal="true" />
+        android:layout_centerHorizontal="true"
+        android:minWidth="@dimen/menu_button_size"/>
 
     <View
         android:layout_width="match_parent"

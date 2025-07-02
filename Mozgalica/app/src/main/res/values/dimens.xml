@@ -27,4 +27,6 @@
     <dimen name="zero_width">0dp</dimen>
     <dimen name="details_card">16sp</dimen>
     <dimen name="icon_on_card_size">20dp</dimen>
+    <dimen name="menu_button_size">250dp</dimen>
+    <dimen name="login_button_size">330dp</dimen>
 </resources>

@@ -37,7 +37,9 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="@dimen/form_top_spacing"
-            android:layout_marginBottom="@dimen/margin_medium" />
+            android:layout_marginBottom="@dimen/margin_medium"
+            android:layout_marginStart="@dimen/margin_medium"
+            android:layout_marginEnd="@dimen/margin_medium"/>
 
         <EditText
             android:id="@+id/etUsername"
@@ -46,7 +48,9 @@
             android:autofillHints="username"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginBottom="@dimen/margin_medium" />
+            android:layout_marginBottom="@dimen/margin_medium"
+            android:layout_marginStart="@dimen/margin_medium"
+            android:layout_marginEnd="@dimen/margin_medium"/>
 
         <RelativeLayout
             android:layout_width="match_parent"
@@ -60,7 +64,9 @@
                 android:autofillHints="password"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:paddingEnd="@dimen/input_min_height" />
+                android:paddingEnd="@dimen/input_min_height"
+                android:layout_marginStart="@dimen/margin_medium"
+                android:layout_marginEnd="@dimen/margin_medium"/>
 
             <ImageButton
                 android:id="@+id/ivTogglePassword"
@@ -68,7 +74,7 @@
                 android:layout_height="@dimen/margin_large"
                 android:layout_alignParentEnd="true"
                 android:layout_centerVertical="true"
-                android:layout_marginEnd="@dimen/input_spacing_vertical"
+                android:layout_marginEnd="@dimen/icon_on_card_size"
                 android:src="@drawable/visibility_off"
                 android:tint="@color/colorPrimary"
                 android:background="@android:color/transparent"
@@ -78,10 +84,11 @@
         <Button
             android:id="@+id/btnRegister"
             android:text="@string/register"
-            android:layout_width="match_parent"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="@dimen/form_top_spacing"
-            style="@style/MozgalicaButton" />
+            style="@style/MozgalicaButton"
+            android:minWidth="@dimen/login_button_size"/>
 
         <TextView
             android:id="@+id/tvGoToLogin"

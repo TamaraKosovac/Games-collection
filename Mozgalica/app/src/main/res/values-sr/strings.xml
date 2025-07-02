@@ -51,4 +51,6 @@
     <string name="score">Poeni</string>
     <string name="search">Pretraži</string>
     <string name="reset">Resetuj</string>
+    <string name="menu">Meni</string>
+    <string name="user">Korisnik</string>
 </resources>

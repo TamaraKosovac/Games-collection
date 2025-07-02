@@ -57,7 +57,7 @@ public class HistoryActivity extends AppCompatActivity {
             String minScoreStr = etMinScore.getText().toString().trim();
             int minScore = minScoreStr.isEmpty() ? 0 : Integer.parseInt(minScoreStr);
 
-            resultsContainer.removeAllViews(); // očisti prethodne rezultate
+            resultsContainer.removeAllViews();
 
             new Thread(() -> {
                 List<GameResult> results = dbHelper.getFilteredResults(username, game, result, minScore);
@@ -66,11 +66,11 @@ public class HistoryActivity extends AppCompatActivity {
                     for (GameResult r : results) {
                         View card = LayoutInflater.from(this).inflate(R.layout.card_result, resultsContainer, false);
 
-                        ((TextView) card.findViewById(R.id.tvUsername)).setText("Username: " + r.getUsername());
-                        ((TextView) card.findViewById(R.id.tvGame)).setText("Game: " + r.getGame());
-                        ((TextView) card.findViewById(R.id.tvResult)).setText("Result: " + r.getResult());
-                        ((TextView) card.findViewById(R.id.tvScore)).setText("Score: " + r.getScore());
-                        ((TextView) card.findViewById(R.id.tvTimestamp)).setText("Time: " + r.getTimestamp());
+                        ((TextView) card.findViewById(R.id.tvUsername)).setText(r.getUsername());
+                        ((TextView) card.findViewById(R.id.tvGame)).setText(r.getGame());
+                        ((TextView) card.findViewById(R.id.tvResult)).setText(r.getResult());
+                        ((TextView) card.findViewById(R.id.tvScore)).setText(String.valueOf(r.getScore()));
+                        ((TextView) card.findViewById(R.id.tvTimestamp)).setText(String.valueOf(r.getTimestamp()));
 
                         resultsContainer.addView(card);
                     }
@@ -90,16 +90,15 @@ public class HistoryActivity extends AppCompatActivity {
                 for (GameResult r : results) {
                     View card = LayoutInflater.from(this).inflate(R.layout.card_result, resultsContainer, false);
 
-                    ((TextView) card.findViewById(R.id.tvUsername)).setText("Username: " + r.getUsername());
-                    ((TextView) card.findViewById(R.id.tvGame)).setText("Game: " + r.getGame());
-                    ((TextView) card.findViewById(R.id.tvResult)).setText("Result: " + r.getResult());
-                    ((TextView) card.findViewById(R.id.tvScore)).setText("Score: " + r.getScore());
-                    ((TextView) card.findViewById(R.id.tvTimestamp)).setText("Time: " + r.getTimestamp());
+                    ((TextView) card.findViewById(R.id.tvUsername)).setText(r.getUsername());
+                    ((TextView) card.findViewById(R.id.tvGame)).setText(r.getGame());
+                    ((TextView) card.findViewById(R.id.tvResult)).setText(r.getResult());
+                    ((TextView) card.findViewById(R.id.tvScore)).setText(String.valueOf(r.getScore()));
+                    ((TextView) card.findViewById(R.id.tvTimestamp)).setText(String.valueOf(r.getTimestamp()));
 
                     resultsContainer.addView(card);
                 }
             });
         }).start();
     }
-
 }

@@ -67,17 +67,22 @@
                 android:id="@+id/tvTitle"
                 android:textSize="@dimen/title_text_size"
                 android:textStyle="bold"
-                android:layout_marginBottom="@dimen/margin_medium"
+                android:textColor="@color/colorPrimary"
                 android:text="@string/game"
                 android:layout_width="wrap_content"
-                android:layout_height="wrap_content" />
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_horizontal"
+                android:textAlignment="center"
+                android:layout_marginTop="@dimen/margin_small"
+                android:layout_marginBottom="@dimen/margin_large" />
 
             <androidx.cardview.widget.CardView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginBottom="@dimen/margin_medium"
                 app:cardCornerRadius="@dimen/input_spacing_vertical"
-                app:cardElevation="@dimen/nav_padding_vertical">
+                app:cardElevation="@dimen/nav_padding_vertical"
+                android:layout_marginTop="@dimen/margin_large">
 
                 <LinearLayout
                     android:orientation="vertical"
@@ -160,11 +165,21 @@
                 </LinearLayout>
             </androidx.cardview.widget.CardView>
 
-            <Button
+            <com.google.android.material.button.MaterialButton
                 android:id="@+id/btnWatchVideo"
-                android:text="@string/watch_video"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content" />
+                style="@style/MozgalicaSecondaryButton"
+                android:layout_width="@dimen/navbar_height"
+                android:layout_height="@dimen/navbar_height"
+                android:layout_gravity="end"
+                android:layout_marginTop="@dimen/nav_padding_vertical"
+                android:text=""
+                app:icon="@drawable/ic_youtube"
+                app:iconTint="@android:color/white"
+                app:iconGravity="textStart"
+                app:iconSize="@dimen/icon_size_nav"
+                app:cornerRadius="@dimen/margin_large"
+                app:backgroundTint="@color/colorSecondary"
+                android:contentDescription="@string/watch_video" />
         </LinearLayout>
 
     </ScrollView>

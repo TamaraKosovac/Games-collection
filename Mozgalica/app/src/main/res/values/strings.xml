@@ -51,4 +51,6 @@
     <string name="score">Score</string>
     <string name="search">Search</string>
     <string name="reset">Reset</string>
+    <string name="menu">Menu</string>
+    <string name="user">User</string>
 </resources>

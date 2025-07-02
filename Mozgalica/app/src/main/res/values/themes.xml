@@ -25,6 +25,13 @@
         <item name="android:textColor">@color/colorOnPrimary</item>
     </style>
 
+    <style name="MozgalicaReverseButton" parent="Widget.Material3.Button">
+        <item name="backgroundTint">@color/colorOnPrimary</item>
+        <item name="android:textColor">@color/colorPrimary</item>
+        <item name="strokeColor">@color/colorPrimary</item>
+        <item name="strokeWidth">2dp</item>
+    </style>
+
     <style name="MozgalicaTitle" parent="TextAppearance.Material3.HeadlineMedium">
         <item name="android:textColor">@color/colorPrimary</item>
         <item name="android:textStyle">bold</item>
@@ -37,8 +44,8 @@
     </style>
 
     <style name="MozgalicaSecondaryButton" parent="Widget.MaterialComponents.Button.TextButton">
-        <item name="android:textColor">@color/colorPrimary</item>
-        <item name="android:background">@android:color/transparent</item>
+        <item name="android:textColor">@color/colorOnPrimary</item>
+        <item name="backgroundTint">@color/colorSecondary</item>
         <item name="android:textSize">@dimen/button_text</item>
     </style>
 

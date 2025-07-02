@@ -50,6 +50,19 @@
             android:onClick="onSettings" />
     </RelativeLayout>
 
+    <TextView
+        android:id="@+id/tvMainMenuTitle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/menu"
+        android:textSize="@dimen/title_text_size"
+        android:textStyle="bold"
+        android:textColor="@color/colorPrimary"
+        android:layout_below="@id/topNavBar"
+        android:layout_marginTop="@dimen/margin_large"
+        android:layout_centerHorizontal="true" />
+
+
     <Button
         android:id="@+id/btnTicTacToe"
         style="@style/MozgalicaButton"
@@ -58,22 +71,28 @@
         app:icon="@drawable/ic_xo"
         app:iconGravity="textStart"
         app:iconTint="@color/colorOnPrimary"
-        android:layout_marginTop="@dimen/margin_medium"
+        android:layout_marginTop="@dimen/input_min_height"
         android:layout_centerHorizontal="true"
-        android:layout_width="match_parent"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_below="@id/topNavBar"
-        app:iconSize="@dimen/icon_size_nav"/>
+        android:layout_below="@id/tvMainMenuTitle"
+        app:iconSize="@dimen/icon_size_nav"
+        android:minWidth="@dimen/menu_button_size"/>
 
     <Button
         android:id="@+id/btnTicTacToeDetails"
-        style="@style/MozgalicaSecondaryButton"
+        style="@style/MozgalicaReverseButton"
         android:text="@string/view_details"
         android:onClick="onTicTacToeDetails"
         android:layout_below="@id/btnTicTacToe"
         android:layout_centerHorizontal="true"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content" />
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:minWidth="@dimen/menu_button_size"
+        app:icon="@drawable/ic_rules"
+        app:iconGravity="textStart"
+        app:iconTint="@color/colorPrimary"
+        app:iconPadding="@dimen/game_button_details_margin"/>
 
     <Button
         android:id="@+id/btnMemoryMatch"
@@ -85,21 +104,27 @@
         app:iconTint="@color/colorOnPrimary"
         app:iconPadding="@dimen/game_icon_padding"
         android:layout_below="@id/btnTicTacToeDetails"
-        android:layout_marginTop="@dimen/margin_medium"
+        android:layout_marginTop="@dimen/input_min_height"
         android:layout_centerHorizontal="true"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content" />
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:minWidth="@dimen/menu_button_size"/>
 
     <Button
         android:id="@+id/btnMemoryMatchDetails"
-        style="@style/MozgalicaSecondaryButton"
+        style="@style/MozgalicaReverseButton"
         android:text="@string/view_details"
         android:onClick="onMemoryMatchDetails"
         android:layout_below="@id/btnMemoryMatch"
         android:layout_marginTop="@dimen/game_button_details_margin"
         android:layout_centerHorizontal="true"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content" />
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:minWidth="@dimen/menu_button_size"
+        app:icon="@drawable/ic_rules"
+        app:iconGravity="textStart"
+        app:iconTint="@color/colorPrimary"
+        app:iconPadding="@dimen/game_button_details_margin"/>
 
     <Button
         android:id="@+id/btnSudoku"
@@ -111,21 +136,27 @@
         app:iconTint="@color/colorOnPrimary"
         app:iconPadding="@dimen/game_icon_padding"
         android:layout_below="@id/btnMemoryMatchDetails"
-        android:layout_marginTop="@dimen/margin_medium"
+        android:layout_marginTop="@dimen/input_min_height"
         android:layout_centerHorizontal="true"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content" />
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:minWidth="@dimen/menu_button_size"/>
 
     <Button
         android:id="@+id/btnSudokuDetails"
-        style="@style/MozgalicaSecondaryButton"
+        style="@style/MozgalicaReverseButton"
         android:text="@string/view_details"
         android:onClick="onSudokuDetails"
         android:layout_below="@id/btnSudoku"
         android:layout_marginTop="@dimen/game_button_details_margin"
         android:layout_centerHorizontal="true"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content" />
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:minWidth="@dimen/menu_button_size"
+        app:icon="@drawable/ic_rules"
+        app:iconGravity="textStart"
+        app:iconTint="@color/colorPrimary"
+        app:iconPadding="@dimen/game_button_details_margin" />
 
     <View
         android:layout_width="match_parent"

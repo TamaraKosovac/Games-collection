@@ -7,11 +7,11 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".activities.HistoryActivity"
-    android:padding="16dp">
+    android:padding="@dimen/margin_medium">
 
     <EditText
         android:id="@+id/etUsername"
-        android:layout_width="0dp"
+        android:layout_width="@dimen/zero_width"
         android:layout_height="wrap_content"
         android:hint="@string/username"
         android:inputType="text"
@@ -21,62 +21,118 @@
 
     <EditText
         android:id="@+id/etGame"
-        android:layout_width="0dp"
+        android:layout_width="@dimen/zero_width"
         android:layout_height="wrap_content"
         android:hint="@string/game"
         android:inputType="text"
+        android:layout_marginTop="@dimen/game_button_details_margin"
         app:layout_constraintTop_toBottomOf="@id/etUsername"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        android:layout_marginTop="8dp" />
+        app:layout_constraintEnd_toEndOf="parent" />
 
     <EditText
         android:id="@+id/etResult"
-        android:layout_width="0dp"
+        android:layout_width="@dimen/zero_width"
         android:layout_height="wrap_content"
         android:hint="@string/result"
         android:inputType="text"
+        android:layout_marginTop="@dimen/game_button_details_margin"
         app:layout_constraintTop_toBottomOf="@id/etGame"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        android:layout_marginTop="8dp" />
+        app:layout_constraintEnd_toEndOf="parent" />
 
     <EditText
         android:id="@+id/etMinScore"
-        android:layout_width="0dp"
+        android:layout_width="@dimen/zero_width"
         android:layout_height="wrap_content"
         android:hint="@string/score"
         android:inputType="number"
+        android:layout_marginTop="@dimen/game_button_details_margin"
         app:layout_constraintTop_toBottomOf="@id/etResult"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        android:layout_marginTop="8dp" />
+        app:layout_constraintEnd_toEndOf="parent" />
 
     <Button
         android:id="@+id/btnSearch"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="@string/search"
+        android:layout_marginTop="@dimen/input_spacing_vertical"
         app:layout_constraintTop_toBottomOf="@id/etMinScore"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        android:layout_marginTop="12dp" />
+        app:layout_constraintEnd_toEndOf="parent" />
+
+    <LinearLayout
+        android:id="@+id/headerContainer"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_marginTop="@dimen/input_spacing_vertical"
+        android:paddingStart="@dimen/margin_medium"
+        android:paddingEnd="@dimen/margin_medium"
+        android:gravity="center_vertical"
+        app:layout_constraintTop_toBottomOf="@id/btnSearch"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent">
+
+        <View
+            android:layout_width="@dimen/margin_large"
+            android:layout_height="@dimen/zero_width" />
+
+        <TextView
+            android:text="@string/username"
+            android:textStyle="bold"
+            android:textSize="@dimen/button_text"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="@dimen/input_spacing_vertical" />
+
+        <TextView
+            android:text="@string/game"
+            android:textStyle="bold"
+            android:textSize="@dimen/button_text"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="@dimen/input_spacing_vertical" />
+
+        <TextView
+            android:text="@string/result"
+            android:textStyle="bold"
+            android:textSize="@dimen/button_text"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="@dimen/input_spacing_vertical" />
+
+        <TextView
+            android:text="@string/score"
+            android:textStyle="bold"
+            android:textSize="@dimen/button_text"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="@dimen/input_spacing_vertical" />
+
+        <TextView
+            android:text="@string/time"
+            android:textStyle="bold"
+            android:textSize="@dimen/button_text"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+    </LinearLayout>
 
     <ScrollView
-        android:layout_width="0dp"
-        android:layout_height="0dp"
-        app:layout_constraintTop_toBottomOf="@id/btnSearch"
+        android:layout_width="@dimen/zero_width"
+        android:layout_height="@dimen/zero_width"
+        android:layout_marginTop="@dimen/game_button_details_margin"
+        app:layout_constraintTop_toBottomOf="@id/headerContainer"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        android:layout_marginTop="12dp">
+        app:layout_constraintEnd_toEndOf="parent">
 
         <LinearLayout
             android:id="@+id/resultsContainer"
             android:orientation="vertical"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="8dp" />
+            android:layout_height="wrap_content" />
     </ScrollView>
 
 </androidx.constraintlayout.widget.ConstraintLayout>
