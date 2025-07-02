@@ -75,7 +75,12 @@ public class SudokuActivity extends AppCompatActivity {
                 sudokuGrid.addView(cell);
             }
         }
-        findViewById(R.id.btnReset).setOnClickListener(v -> recreate());
+        findViewById(R.id.btnReset).setOnClickListener(v -> {
+            Intent intent = new Intent(this, SudokuActivity.class);
+            intent.putExtra("USERNAME", currentUser);
+            startActivity(intent);
+            finish();
+        });
 
         findViewById(R.id.btnBack).setOnClickListener(v -> finish());
 
