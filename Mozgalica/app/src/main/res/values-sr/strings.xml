@@ -52,5 +52,6 @@
     <string name="time">Vrijeme</string>
     <string name="score">Poeni</string>
     <string name="search">Pretraži</string>
+    <string name="reset">Resetuj</string>
 
 </resources>

@@ -52,5 +52,6 @@
     <string name="time">Time</string>
     <string name="score">Score</string>
     <string name="search">Search</string>
+    <string name="reset">Reset</string>
 
 </resources>
