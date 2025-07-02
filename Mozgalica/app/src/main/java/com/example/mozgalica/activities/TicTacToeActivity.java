@@ -4,6 +4,7 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import androidx.activity.EdgeToEdge;
 import androidx.appcompat.app.AppCompatActivity;
@@ -62,8 +63,7 @@ public class TicTacToeActivity extends AppCompatActivity {
 
         findViewById(R.id.btnReset).setOnClickListener(v -> resetBoard());
 
-        // Prikaz početnog igrača
-        tvPlayerTurn.setText("Turn: " + currentUser);
+        tvPlayerTurn.setText(getString(R.string.your_move));
     }
 
     public void onSettings(View view) {
@@ -95,20 +95,28 @@ public class TicTacToeActivity extends AppCompatActivity {
 
         if (checkWin()) {
             String winner = playerXTurn ? currentUser : "System";
-            tvPlayerTurn.setText(winner + " wins!");
 
-            dbHelper.saveGameResultAsync(currentUser, "Tic Tac Toe", playerXTurn ? "Win" : "Loss", playerXTurn ? 10 : -5);
+            if (playerXTurn) {
+                dbHelper.saveGameResultAsync(currentUser, "Tic Tac Toe", "Win", 100);
+                Toast.makeText(this, getString(R.string.you_win), Toast.LENGTH_SHORT).show();
+            } else {
+                dbHelper.saveGameResultAsync(currentUser, "Tic Tac Toe", "Loss", 0);
+                Toast.makeText(this, getString(R.string.you_lose), Toast.LENGTH_SHORT).show();
+            }
+
             disableBoard();
         } else if (roundCount == 9) {
-            tvPlayerTurn.setText("Draw!");
-            dbHelper.saveGameResultAsync(currentUser, "Tic Tac Toe", "Draw", 0);
+            dbHelper.saveGameResultAsync(currentUser, "Tic Tac Toe", "Draw", 50);
+            tvPlayerTurn.setText(getString(R.string.draw));
         } else {
             playerXTurn = !playerXTurn;
-            tvPlayerTurn.setText("Turn: " + (playerXTurn ? currentUser : "System"));
 
-            // Ako je na redu sistem, pusti da automatski odigra
+            if (playerXTurn) {
+                tvPlayerTurn.setText(getString(R.string.your_move));
+            }
+
             if (!playerXTurn) {
-                new android.os.Handler().postDelayed(this::systemMove, 500); // mala pauza radi prirodnosti
+                new android.os.Handler().postDelayed(this::systemMove, 500);
             }
         }
     }
@@ -117,11 +125,38 @@ public class TicTacToeActivity extends AppCompatActivity {
         for (int i = 0; i < 3; i++) {
             for (int j = 0; j < 3; j++) {
                 if (cells[i][j].getText().toString().isEmpty()) {
-                    handleMove(i, j);
-                    return;
+                    cells[i][j].setText("O");
+                    if (checkWin()) {
+                        cells[i][j].setText("");
+                        handleMove(i, j);
+                        return;
+                    }
+                    cells[i][j].setText("");
                 }
             }
         }
+
+        for (int i = 0; i < 3; i++) {
+            for (int j = 0; j < 3; j++) {
+                if (cells[i][j].getText().toString().isEmpty()) {
+                    cells[i][j].setText("X");
+                    if (checkWin()) {
+                        cells[i][j].setText("");
+                        handleMove(i, j);
+                        return;
+                    }
+                    cells[i][j].setText("");
+                }
+            }
+        }
+
+        for (int i = 0; i < 3; i++)
+            for (int j = 0; j < 3; j++)
+                if (cells[i][j].getText().toString().isEmpty()) {
+                    handleMove(i, j);
+                    tvPlayerTurn.setText(getString(R.string.your_move));
+                    return;
+                }
     }
 
     private boolean checkWin() {
@@ -157,6 +192,6 @@ public class TicTacToeActivity extends AppCompatActivity {
 
         roundCount = 0;
         playerXTurn = true;
-        tvPlayerTurn.setText("Turn: " + currentUser);
+        tvPlayerTurn.setText(getString(R.string.your_move));
     }
 }

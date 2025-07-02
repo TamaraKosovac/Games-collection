@@ -53,4 +53,9 @@
     <string name="reset">Reset</string>
     <string name="menu">Menu</string>
     <string name="user">User</string>
+    <string name="your_move">You are player X</string>
+    <string name="you_win">You won! +100 points</string>
+    <string name="you_lose">You lost!</string>
+    <string name="draw">Draw! +50 points</string>
+
 </resources>

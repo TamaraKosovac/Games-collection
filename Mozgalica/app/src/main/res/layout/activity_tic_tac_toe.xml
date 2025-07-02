@@ -62,14 +62,14 @@
     <TextView
         android:id="@+id/tvPlayerTurn"
         style="@style/MozgalicaTitle"
-        android:text="Player's turn"
+        android:text="@string/tic_tac_toe"
         android:textSize="@dimen/text_welcome_size"
         app:layout_constraintTop_toBottomOf="@id/topNavBar"
         app:layout_constraintBottom_toTopOf="@+id/gridLayout"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        android:layout_marginTop="@dimen/margin_medium"
-        android:layout_marginBottom="@dimen/game_button_details_margin"
+        android:layout_marginTop="@dimen/input_min_height"
+        android:layout_marginBottom="@dimen/margin_extra_small"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content" />
 
@@ -81,7 +81,8 @@
         android:columnCount="3"
         app:layout_constraintTop_toBottomOf="@id/tvPlayerTurn"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toEndOf="parent">
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_marginTop="@dimen/card_size">
 
         <TextView android:id="@+id/btn00" style="@style/TicTacToeCell" />
         <TextView android:id="@+id/btn01" style="@style/TicTacToeCell" />
@@ -94,18 +95,26 @@
         <TextView android:id="@+id/btn22" style="@style/TicTacToeCell" />
     </GridLayout>
 
-    <Button
+    <com.google.android.material.button.MaterialButton
         android:id="@+id/btnReset"
-        style="@style/MozgalicaButton"
-        android:text="Reset Game"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        style="@style/MozgalicaSecondaryButton"
+        android:layout_width="@dimen/navbar_height"
+        android:layout_height="@dimen/navbar_height"
+        android:text=""
+        app:icon="@drawable/ic_repeat"
+        app:iconTint="@android:color/white"
+        app:iconGravity="textStart"
+        app:iconSize="@dimen/icon_size_nav"
+        app:cornerRadius="@dimen/margin_large"
+        app:backgroundTint="@color/colorSecondary"
+        android:contentDescription="@string/reset"
         app:layout_constraintTop_toBottomOf="@id/gridLayout"
         app:layout_constraintBottom_toTopOf="@id/bottomNavBar"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         android:layout_marginTop="@dimen/margin_medium"
         android:layout_marginBottom="@dimen/margin_medium" />
+
 
     <LinearLayout
         android:id="@+id/bottomNavBar"

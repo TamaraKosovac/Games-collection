@@ -53,4 +53,9 @@
     <string name="reset">Resetuj</string>
     <string name="menu">Meni</string>
     <string name="user">Korisnik</string>
+    <string name="your_move">Vi ste igrač X</string>
+    <string name="you_win">Pobedili ste! +100 poena</string>
+    <string name="you_lose">Izgubili ste!</string>
+    <string name="draw">Neriješeno! +50 poena</string>
+
 </resources>
