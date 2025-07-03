@@ -25,12 +25,20 @@ public class SudokuActivity extends AppCompatActivity {
     private TextView[][] cells = new TextView[9][9];
     private DatabaseHelper dbHelper;
     private String currentUser = "";
+    private long startTime;
+    private TextView tvTimer;
+    private android.os.Handler timerHandler = new android.os.Handler();
+    private Runnable timerRunnable;
+
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         EdgeToEdge.enable(this);
         setContentView(R.layout.activity_sudoku);
+        startTime = System.currentTimeMillis();
+
         currentUser = getIntent().getStringExtra("USERNAME");
 
         if (android.os.Build.VERSION.SDK_INT >= android.os.Build.VERSION_CODES.LOLLIPOP) {
@@ -44,6 +52,22 @@ public class SudokuActivity extends AppCompatActivity {
         });
 
         dbHelper = new DatabaseHelper(this);
+        tvTimer = findViewById(R.id.tvTimer);
+
+        timerRunnable = new Runnable() {
+            @Override
+            public void run() {
+                long elapsedMillis = System.currentTimeMillis() - startTime;
+                int seconds = (int) (elapsedMillis / 1000);
+                int minutes = seconds / 60;
+                seconds = seconds % 60;
+
+                tvTimer.setText(String.format("%d:%02d", minutes, seconds));
+                timerHandler.postDelayed(this, 1000);
+            }
+        };
+        timerHandler.postDelayed(timerRunnable, 0);
+
 
         GridLayout sudokuGrid = findViewById(R.id.sudokuGrid);
         int cellSize = getResources().getDimensionPixelSize(R.dimen.game_button_top_margin);
@@ -65,6 +89,7 @@ public class SudokuActivity extends AppCompatActivity {
                 if (value != 0) {
                     cell.setText(String.valueOf(value));
                     cell.setEnabled(false);
+                    cell.setTextColor(getColor(android.R.color.black));
                 } else {
                     int finalRow = row;
                     int finalCol = col;
@@ -121,7 +146,7 @@ public class SudokuActivity extends AppCompatActivity {
 
     private void showNumberInput(int row, int col) {
         AlertDialog.Builder builder = new AlertDialog.Builder(this);
-        builder.setTitle("Unesi broj");
+        builder.setTitle(getString(R.string.enter_number));
         String[] numbers = {"1", "2", "3", "4", "5", "6", "7", "8", "9"};
         builder.setItems(numbers, (dialog, which) -> {
             int selectedNumber = which + 1;
@@ -147,13 +172,31 @@ public class SudokuActivity extends AppCompatActivity {
             }
         }
 
-        dbHelper.saveGameResultAsync(currentUser, "Sudoku", "Win", 100);
+        long endTime = System.currentTimeMillis();
+        long durationMillis = endTime - startTime;
+        long minutes = durationMillis / (1000 * 60);
+
+        int score;
+        if (minutes < 5) {
+            score = 100;
+        } else if (minutes < 10) {
+            score = 80;
+        } else if (minutes < 15) {
+            score = 60;
+        } else {
+            score = 40;
+        }
+
+        dbHelper.saveGameResultAsync(currentUser, "Sudoku", "Win", score);
+
+        timerHandler.removeCallbacks(timerRunnable);
+
         new AlertDialog.Builder(this)
-                .setTitle("Bravo!")
-                .setMessage("Uspješno si riješio Sudoku.")
+                .setMessage(getString(R.string.sudoku_win))
                 .setPositiveButton("OK", (d, w) -> finish())
                 .show();
     }
+
 
     public void onSettings(View view) {
         startActivity(new Intent(this, SettingsActivity.class));
