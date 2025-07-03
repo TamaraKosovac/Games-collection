@@ -1,6 +1,7 @@
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
 
     <RelativeLayout
         android:id="@+id/topNavBar"
@@ -55,27 +56,37 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content" />
 
-    <Button
+    <com.google.android.material.button.MaterialButton
         android:id="@+id/btnGoToGames"
-        android:text="@string/games"
         style="@style/MozgalicaButton"
+        android:text="@string/games"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_below="@id/tvWelcome"
         android:layout_marginTop="@dimen/tic_tac_toe_cell_size"
         android:layout_centerHorizontal="true"
-        android:minWidth="@dimen/menu_button_size"/>
+        android:minWidth="@dimen/menu_button_size"
+        app:icon="@drawable/ic_games"
+        app:iconGravity="textStart"
+        app:iconTint="@color/colorOnPrimary"
+        app:iconPadding="@dimen/game_button_details_margin" />
 
-    <Button
+
+    <com.google.android.material.button.MaterialButton
         android:id="@+id/btnMyResults"
-        android:text="@string/my_results"
         style="@style/MozgalicaReverseButton"
+        android:text="@string/my_results"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_below="@id/btnGoToGames"
         android:layout_marginTop="@dimen/margin_medium"
         android:layout_centerHorizontal="true"
-        android:minWidth="@dimen/menu_button_size"/>
+        android:minWidth="@dimen/menu_button_size"
+        app:icon="@drawable/ic_results"
+        app:iconGravity="textStart"
+        app:iconTint="@color/colorPrimary"
+        app:iconPadding="@dimen/game_button_details_margin" />
+
 
     <View
         android:layout_width="match_parent"

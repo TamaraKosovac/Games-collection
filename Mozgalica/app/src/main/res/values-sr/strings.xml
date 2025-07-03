@@ -57,5 +57,6 @@
     <string name="you_win">Pobedili ste! +100 poena</string>
     <string name="you_lose">Izgubili ste!</string>
     <string name="draw">Neriješeno! +50 poena</string>
+    <string name="no_search_results">Nema rezultata pretrage</string>
 
 </resources>

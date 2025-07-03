@@ -19,7 +19,7 @@
             android:layout_width="@dimen/margin_large"
             android:layout_height="@dimen/margin_large"
             android:src="@drawable/ic_user"
-            android:tint="@color/colorPrimary"
+            android:tint="@color/colorSecondary"
             android:layout_marginEnd="@dimen/input_spacing_vertical"
             android:contentDescription="@string/user" />
 

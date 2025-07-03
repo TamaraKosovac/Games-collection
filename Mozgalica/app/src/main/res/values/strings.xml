@@ -57,5 +57,6 @@
     <string name="you_win">You won! +100 points</string>
     <string name="you_lose">You lost!</string>
     <string name="draw">Draw! +50 points</string>
+    <string name="no_search_results">No result of search</string>
 
 </resources>
