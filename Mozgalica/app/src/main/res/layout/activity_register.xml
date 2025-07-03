@@ -76,7 +76,7 @@
                 android:layout_centerVertical="true"
                 android:layout_marginEnd="@dimen/icon_on_card_size"
                 android:src="@drawable/visibility_off"
-                android:tint="@color/colorPrimary"
+                app:tint="@color/colorPrimary"
                 android:background="@android:color/transparent"
                 android:contentDescription="@string/show_password_icon" />
         </RelativeLayout>

@@ -59,6 +59,7 @@
     <string name="draw">Draw! +50 points</string>
     <string name="no_search_results">No result of search</string>
     <string name="enter_number">Enter a number</string>
-    <string name="sudoku_win">You have successfully solved the Sudoku</string>
+    <string name="sudoku_win">You have successfully solved the game</string>
+    <string name="moves_default">Moves</string>
 
 </resources>

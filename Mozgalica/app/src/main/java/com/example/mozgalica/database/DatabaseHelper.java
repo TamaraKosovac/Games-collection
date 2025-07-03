@@ -115,9 +115,6 @@ public class DatabaseHelper extends SQLiteOpenHelper {
             db.insert("results", null, values);
             db.close();
 
-            mainHandler.post(() ->
-                    Toast.makeText(context, "Rezultat je sačuvan.", Toast.LENGTH_SHORT).show()
-            );
         }).start();
     }
 

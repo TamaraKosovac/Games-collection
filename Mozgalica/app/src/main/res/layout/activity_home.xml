@@ -29,7 +29,7 @@
             android:src="@drawable/ic_settings"
             android:layout_centerVertical="true"
             android:contentDescription="@string/settings"
-            android:tint="@color/colorOnPrimary"
+            app:tint="@color/colorOnPrimary"
             android:layout_marginEnd="@dimen/margin_medium"
             android:layout_alignParentEnd="true"
             android:clickable="true"
@@ -120,7 +120,7 @@
                 android:layout_width="@dimen/margin_large"
                 android:layout_height="@dimen/margin_large"
                 android:src="@drawable/ic_home"
-                android:tint="@color/colorPrimary"
+                app:tint="@color/colorPrimary"
                 android:contentDescription="@string/home" />
 
             <TextView
@@ -146,7 +146,7 @@
                 android:layout_width="@dimen/margin_large"
                 android:layout_height="@dimen/margin_large"
                 android:src="@drawable/ic_games"
-                android:tint="@color/colorPrimary"
+                app:tint="@color/colorPrimary"
                 android:contentDescription="@string/games" />
 
             <TextView
@@ -172,7 +172,7 @@
                 android:layout_width="@dimen/margin_large"
                 android:layout_height="@dimen/margin_large"
                 android:src="@drawable/ic_results"
-                android:tint="@color/colorPrimary"
+                app:tint="@color/colorPrimary"
                 android:contentDescription="@string/my_results" />
 
             <TextView

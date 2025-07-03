@@ -59,6 +59,8 @@
     <string name="draw">Neriješeno! +50 poena</string>
     <string name="no_search_results">Nema rezultata pretrage</string>
     <string name="enter_number">Unesite broj</string>
-    <string name="sudoku_win">Uspješno ste riješili Sudoku</string>
+    <string name="sudoku_win">Uspješno ste riješili igru</string>
+    <string name="moves_default">Potezi</string>
+
 
 </resources>

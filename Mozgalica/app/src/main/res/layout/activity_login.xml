@@ -67,7 +67,7 @@
             android:layout_centerVertical="true"
             android:layout_marginEnd="@dimen/nav_padding_vertical"
             android:src="@drawable/visibility_off"
-            android:tint="@color/colorPrimary"
+            app:tint="@color/colorPrimary"
             android:contentDescription="@string/show_password_icon"
             android:clickable="true"
             android:focusable="true" />

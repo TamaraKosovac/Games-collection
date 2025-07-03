@@ -86,7 +86,6 @@
             android:layout_marginStart="@dimen/nav_padding_vertical"/>
     </LinearLayout>
 
-
     <GridLayout
         android:id="@+id/sudokuGrid"
         android:layout_width="wrap_content"

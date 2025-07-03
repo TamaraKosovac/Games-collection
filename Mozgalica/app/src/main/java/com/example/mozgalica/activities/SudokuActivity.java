@@ -8,6 +8,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.GridLayout;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import androidx.activity.EdgeToEdge;
 import androidx.appcompat.app.AppCompatActivity;
@@ -191,10 +192,8 @@ public class SudokuActivity extends AppCompatActivity {
 
         timerHandler.removeCallbacks(timerRunnable);
 
-        new AlertDialog.Builder(this)
-                .setMessage(getString(R.string.sudoku_win))
-                .setPositiveButton("OK", (d, w) -> finish())
-                .show();
+        Toast.makeText(this, getString(R.string.sudoku_win), Toast.LENGTH_SHORT).show();
+        finish();
     }
 
 

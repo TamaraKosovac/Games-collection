@@ -26,11 +26,10 @@
             android:layout_marginStart="@dimen/margin_medium"
             android:layout_alignParentStart="true"
             android:src="@drawable/ic_back"
-            android:tint="@color/colorOnPrimary"
+            app:tint="@color/colorOnPrimary"
             android:contentDescription="@string/back"
             android:clickable="true"
-            android:focusable="true"
-            android:onClick="onBackPressed" />
+            android:focusable="true" />
 
         <TextView
             android:id="@+id/tvTitleToolbar"
@@ -52,12 +51,42 @@
             android:layout_centerVertical="true"
             android:layout_alignParentEnd="true"
             android:layout_marginEnd="@dimen/margin_medium"
-            android:tint="@color/colorOnPrimary"
+            app:tint="@color/colorOnPrimary"
             android:contentDescription="@string/settings"
             android:clickable="true"
             android:focusable="true"
             android:onClick="onSettings" />
     </RelativeLayout>
+
+    <LinearLayout
+        android:id="@+id/moveCounterLayout"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:gravity="center"
+        app:layout_constraintTop_toBottomOf="@id/topNavBar"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_marginTop="@dimen/input_min_height">
+
+        <ImageView
+            android:id="@+id/iconMoves"
+            android:layout_width="@dimen/icon_size_nav"
+            android:layout_height="@dimen/icon_size_nav"
+            android:src="@drawable/ic_calculator"
+            app:tint="@color/colorPrimary"
+            android:contentDescription="@string/moves_default" />
+
+        <TextView
+            android:id="@+id/tvMoves"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="0"
+            android:textSize="@dimen/title_text_size"
+            android:textColor="@color/colorPrimary"
+            android:textStyle="bold"
+            android:layout_marginStart="@dimen/nav_padding_vertical" />
+    </LinearLayout>
 
     <GridLayout
         android:id="@+id/memoryGrid"
@@ -73,7 +102,6 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent">
 
-        <!-- 16 KARTICA -->
         <ImageButton android:id="@+id/card_00" style="@style/MemoryCard" />
         <ImageButton android:id="@+id/card_01" style="@style/MemoryCard" />
         <ImageButton android:id="@+id/card_02" style="@style/MemoryCard" />
@@ -91,6 +119,27 @@
         <ImageButton android:id="@+id/card_32" style="@style/MemoryCard" />
         <ImageButton android:id="@+id/card_33" style="@style/MemoryCard" />
     </GridLayout>
+
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/btnReset"
+        style="@style/MozgalicaSecondaryButton"
+        android:layout_width="@dimen/navbar_height"
+        android:layout_height="@dimen/navbar_height"
+        android:text=""
+        app:icon="@drawable/ic_repeat"
+        app:iconTint="@android:color/white"
+        app:iconGravity="textStart"
+        app:iconSize="@dimen/icon_size_nav"
+        app:cornerRadius="@dimen/margin_large"
+        app:backgroundTint="@color/colorSecondary"
+        android:contentDescription="@string/reset"
+        app:layout_constraintTop_toBottomOf="@id/memoryGrid"
+        app:layout_constraintBottom_toTopOf="@id/bottomNavBar"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_marginTop="@dimen/margin_medium"
+        android:layout_marginBottom="@dimen/margin_medium" />
+
 
     <LinearLayout
         android:id="@+id/bottomNavBar"
@@ -120,7 +169,7 @@
                 android:layout_width="@dimen/margin_large"
                 android:layout_height="@dimen/margin_large"
                 android:src="@drawable/ic_home"
-                android:tint="@color/colorPrimary"
+                app:tint="@color/colorPrimary"
                 android:contentDescription="@string/home" />
 
             <TextView
@@ -146,7 +195,7 @@
                 android:layout_width="@dimen/margin_large"
                 android:layout_height="@dimen/margin_large"
                 android:src="@drawable/ic_games"
-                android:tint="@color/colorPrimary"
+                app:tint="@color/colorPrimary"
                 android:contentDescription="@string/games" />
 
             <TextView
@@ -172,7 +221,7 @@
                 android:layout_width="@dimen/margin_large"
                 android:layout_height="@dimen/margin_large"
                 android:src="@drawable/ic_results"
-                android:tint="@color/colorPrimary"
+                app:tint="@color/colorPrimary"
                 android:contentDescription="@string/my_results" />
 
             <TextView

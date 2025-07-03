@@ -18,6 +18,9 @@ import com.example.mozgalica.database.DatabaseHelper;
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
+import android.widget.TextView;
+import android.widget.Toast;
+
 
 public class MemoryMatchActivity extends AppCompatActivity {
 
@@ -30,6 +33,8 @@ public class MemoryMatchActivity extends AppCompatActivity {
 
     private int firstCardIndex = -1;
     private int moves = 0;
+    private TextView tvMoves;
+
 
     private int[] cardImages = {
             R.drawable.ic_card_1, R.drawable.ic_card_2, R.drawable.ic_card_3, R.drawable.ic_card_4,
@@ -54,6 +59,7 @@ public class MemoryMatchActivity extends AppCompatActivity {
 
         currentUser = getIntent().getStringExtra("USERNAME");
         dbHelper = new DatabaseHelper(this);
+        tvMoves = findViewById(R.id.tvMoves);
 
         findViewById(R.id.btnBack).setOnClickListener(v -> finish());
 
@@ -65,6 +71,7 @@ public class MemoryMatchActivity extends AppCompatActivity {
 
         findViewById(R.id.navResults).setOnClickListener(v ->
                 startActivity(new Intent(this, HistoryActivity.class)));
+        findViewById(R.id.btnReset).setOnClickListener(v -> shuffleCards());
 
         initializeCards();
         shuffleCards();
@@ -96,6 +103,9 @@ public class MemoryMatchActivity extends AppCompatActivity {
         }
         firstCardIndex = -1;
         moves = 0;
+        if (tvMoves != null) {
+            tvMoves.setText(getString(R.string.moves_default) + " 0");
+        }
     }
 
     private void onCardClick(int index) {
@@ -108,6 +118,7 @@ public class MemoryMatchActivity extends AppCompatActivity {
         } else {
             int secondIndex = index;
             moves++;
+            tvMoves.setText(getString(R.string.moves_default) + " " + moves);
             cards[index].postDelayed(() -> {
                 if (cardOrder[secondIndex] == cardOrder[firstCardIndex]) {
                     matched[secondIndex] = true;
@@ -140,13 +151,21 @@ public class MemoryMatchActivity extends AppCompatActivity {
             if (!m) return;
         }
 
-        dbHelper.saveGameResultAsync(currentUser, "MemoryMatch", "Win", 100);
+        int score;
+        if (moves >= 16 && moves <= 20) {
+            score = 100;
+        } else if (moves <= 25) {
+            score = 80;
+        } else if (moves <= 30) {
+            score = 60;
+        } else {
+            score = 40;
+        }
 
-        new AlertDialog.Builder(this)
-                .setTitle("Bravo!")
-                .setMessage("Uspješno si završio igru za " + moves + " poteza.")
-                .setPositiveButton("OK", (d, w) -> finish())
-                .show();
+        dbHelper.saveGameResultAsync(currentUser, "MemoryMatch", "Win", score);
+
+        Toast.makeText(this, getString(R.string.sudoku_win), Toast.LENGTH_SHORT).show();
+        finish();
     }
 
     public void onSettings(View view) {
