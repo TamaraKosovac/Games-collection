@@ -13,11 +13,11 @@
 ## 🏠 Register, login and home page
 Allows users to create an account and log in using a unique username. This step is required to access the games and use the application. After logging in, users are redirected to the main menu where they can choose a game, view results, or change settings.
 
- <img src="Screenshots/register.png" alt="Register screen" width="250" style="margin-left: 20px;"/>
-
- <img src="Screenshots/login.png" alt="Login screen" width="250" style="margin-left: 20px;"/>
-
- <img src="Screenshots/home.png" alt="Home screen" width="250" style="margin-left: 20px;"/>
+<div style="margin-left: 20px;">
+  <img src="Screenshots/register.png" alt="Register screen" width="250" style="display: inline-block; margin-right: 10px;"/>
+  <img src="Screenshots/login.png" alt="Login screen" width="250" style="display: inline-block; margin-right: 10px;"/>
+  <img src="Screenshots/home.png" alt="Home screen" width="250" style="display: inline-block;"/>
+</div>
 
 
 ## 🎮 Game pages
@@ -52,9 +52,10 @@ Users can view all available games in one place. From the list, they can select 
 ## 📊 Results page
 Displays a history of all game results with the ability to search by username, game name, result, or score.
 
-  <img src="Screenshots/results.png" alt="Results screen" width="250" style="margin-left: 20px;"/>
-
-  <img src="Screenshots/searchResults.png" alt="Search results screen" width="250" style="margin-left: 20px;"/>
+<div style="margin-left: 20px;">
+  <img src="Screenshots/results.png" alt="Results screen" width="250" style="display: inline-block; margin-right: 10px;"/>
+  <img src="Screenshots/searchResults.png" alt="Search results screen" width="250" style="display: inline-block;"/>
+</div>
 
 
 ## ⚙️ Settings page
