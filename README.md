@@ -13,11 +13,11 @@
 ## 🏠 Register, login and home page
 Allows users to create an account and log in using a unique username. This step is required to access the games and use the application. After logging in, users are redirected to the main menu where they can choose a game, view results, or change settings.
 
- ![screenshot](Screenshots/register.png)
+ <img src="Screenshots/register.png" alt="Register screen" width="250"/>
 
- ![screenshot](Screenshots/login.png)
+ <img src="Screenshots/login.png" alt="Login screen" width="250"/>
 
- ![screenshot](Screenshots/home.png)
+ <img src="Screenshots/home.png" alt="Home screen" width="250"/>
 
 
 ## 🎮 Game pages
