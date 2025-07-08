@@ -22,6 +22,7 @@ public class GameDetailsActivity extends AppCompatActivity {
 
         if (android.os.Build.VERSION.SDK_INT >= android.os.Build.VERSION_CODES.LOLLIPOP) {
             getWindow().setStatusBarColor(getResources().getColor(R.color.colorPrimaryVariant));
+            getWindow().setNavigationBarColor(getResources().getColor(android.R.color.white));
         }
 
         tvTitle = findViewById(R.id.tvTitle);

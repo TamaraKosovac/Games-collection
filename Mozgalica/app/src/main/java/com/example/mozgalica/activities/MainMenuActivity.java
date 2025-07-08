@@ -25,6 +25,7 @@ public class MainMenuActivity extends AppCompatActivity {
 
         if (android.os.Build.VERSION.SDK_INT >= android.os.Build.VERSION_CODES.LOLLIPOP) {
             getWindow().setStatusBarColor(getResources().getColor(R.color.colorPrimaryVariant));
+            getWindow().setNavigationBarColor(getResources().getColor(android.R.color.white));
         }
 
         username = getIntent().getStringExtra("USERNAME");
