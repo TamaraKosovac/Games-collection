@@ -45,19 +45,32 @@
         android:layout_height="@dimen/zero_width"
         android:layout_weight="1">
 
-        <Button
+        <com.google.android.material.button.MaterialButton
             android:id="@+id/btnChangeLanguage"
+            style="@style/MozgalicaButton"
             android:text="@string/change_language"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="@dimen/margin_large"
-            android:layout_marginBottom="@dimen/margin_medium" />
+            android:layout_marginBottom="@dimen/margin_medium"
+            android:minWidth="@dimen/menu_button_size"
+            app:icon="@drawable/ic_language"
+            app:iconGravity="textStart"
+            app:iconTint="@color/colorOnPrimary"
+            app:iconPadding="@dimen/game_button_details_margin" />
 
-        <Button
+        <com.google.android.material.button.MaterialButton
             android:id="@+id/btnLogout"
+            style="@style/MozgalicaReverseButton"
             android:text="@string/logout"
             android:layout_width="wrap_content"
-            android:layout_height="wrap_content" />
+            android:layout_height="wrap_content"
+            android:minWidth="@dimen/menu_button_size"
+            app:icon="@drawable/ic_logout"
+            app:iconGravity="textStart"
+            app:iconTint="@color/colorPrimary"
+            app:iconPadding="@dimen/game_button_details_margin" />
+
     </LinearLayout>
 
     <LinearLayout
