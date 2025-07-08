@@ -4,7 +4,7 @@
 
 
 ## 📑 Content
-- Register, login page and home
+- Register, login and home page
 - Game pages
 - Results page
 - Settings page
