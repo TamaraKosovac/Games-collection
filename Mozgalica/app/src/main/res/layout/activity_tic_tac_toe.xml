@@ -6,7 +6,7 @@
     android:id="@+id/main"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/colorSurface"
+    android:background="@color/colorBackground"
     tools:context=".activities.TicTacToeActivity">
 
     <RelativeLayout
@@ -63,7 +63,7 @@
         android:id="@+id/tvPlayerTurn"
         style="@style/MozgalicaTitle"
         android:text="@string/tic_tac_toe"
-        android:textSize="@dimen/text_welcome_size"
+        android:textSize="@dimen/title_text_size"
         app:layout_constraintTop_toBottomOf="@id/topNavBar"
         app:layout_constraintBottom_toTopOf="@+id/gridLayout"
         app:layout_constraintStart_toStartOf="parent"

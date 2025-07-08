@@ -36,7 +36,7 @@ public class LoginActivity extends AppCompatActivity {
 
         if (android.os.Build.VERSION.SDK_INT >= android.os.Build.VERSION_CODES.LOLLIPOP) {
             getWindow().setStatusBarColor(getResources().getColor(R.color.colorPrimaryVariant));
-            getWindow().setNavigationBarColor(getResources().getColor(android.R.color.white));
+            getWindow().setNavigationBarColor(getResources().getColor(R.color.colorBackground));
         }
 
         dbHelper = new DatabaseHelper(this);

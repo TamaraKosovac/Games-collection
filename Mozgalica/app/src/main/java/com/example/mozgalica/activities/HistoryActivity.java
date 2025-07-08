@@ -37,6 +37,11 @@ public class HistoryActivity extends AppCompatActivity {
         setContentView(R.layout.activity_history);
 
         if (android.os.Build.VERSION.SDK_INT >= android.os.Build.VERSION_CODES.LOLLIPOP) {
+            getWindow().setNavigationBarColor(getResources().getColor(android.R.color.white));
+        }
+
+
+        if (android.os.Build.VERSION.SDK_INT >= android.os.Build.VERSION_CODES.LOLLIPOP) {
             getWindow().setStatusBarColor(getResources().getColor(R.color.colorPrimaryVariant));
         }
 

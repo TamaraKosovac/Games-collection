@@ -49,6 +49,11 @@ public class MemoryMatchActivity extends AppCompatActivity {
         setContentView(R.layout.activity_memory_match);
 
         if (android.os.Build.VERSION.SDK_INT >= android.os.Build.VERSION_CODES.LOLLIPOP) {
+            getWindow().setNavigationBarColor(getResources().getColor(android.R.color.white));
+        }
+
+
+        if (android.os.Build.VERSION.SDK_INT >= android.os.Build.VERSION_CODES.LOLLIPOP) {
             getWindow().setStatusBarColor(getResources().getColor(R.color.colorPrimaryVariant));
         }
 
@@ -145,7 +150,7 @@ public class MemoryMatchActivity extends AppCompatActivity {
     private void flipCard(ImageButton card, int imageRes, boolean showWhiteBackground) {
         card.animate().scaleX(0f).setDuration(150).withEndAction(() -> {
             if (showWhiteBackground) {
-                card.setBackgroundColor(getResources().getColor(android.R.color.white));
+                card.setBackgroundColor(getResources().getColor(R.color.colorBackground));
             } else {
                 card.setBackgroundResource(0);
             }
