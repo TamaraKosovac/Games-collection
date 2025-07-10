@@ -22,6 +22,10 @@ import com.example.mozgalica.database.DatabaseHelper;
 import com.example.mozgalica.models.GameResult;
 
 import java.util.List;
+import java.text.SimpleDateFormat;
+import java.util.Date;
+import java.util.Locale;
+
 
 public class HistoryActivity extends AppCompatActivity {
 
@@ -115,7 +119,15 @@ public class HistoryActivity extends AppCompatActivity {
                             ((TextView) card.findViewById(R.id.tvGame)).setText(r.getGame());
                             ((TextView) card.findViewById(R.id.tvResult)).setText(r.getResult());
                             ((TextView) card.findViewById(R.id.tvScore)).setText(String.valueOf(r.getScore()));
-                            ((TextView) card.findViewById(R.id.tvTimestamp)).setText(String.valueOf(r.getTimestamp()));
+                            try {
+                                SimpleDateFormat inputFormat = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss", Locale.getDefault());
+                                SimpleDateFormat outputFormat = new SimpleDateFormat("dd-MM-yyyy HH:mm:ss", Locale.getDefault());
+                                Date parsedDate = inputFormat.parse(r.getTimestamp());
+                                String formattedDate = outputFormat.format(parsedDate);
+                                ((TextView) card.findViewById(R.id.tvTimestamp)).setText(formattedDate);
+                            } catch (Exception e) {
+                                ((TextView) card.findViewById(R.id.tvTimestamp)).setText("");
+                            }
 
                             resultsContainer.addView(card);
                         }
@@ -153,7 +165,15 @@ public class HistoryActivity extends AppCompatActivity {
                         ((TextView) card.findViewById(R.id.tvGame)).setText(r.getGame());
                         ((TextView) card.findViewById(R.id.tvResult)).setText(r.getResult());
                         ((TextView) card.findViewById(R.id.tvScore)).setText(String.valueOf(r.getScore()));
-                        ((TextView) card.findViewById(R.id.tvTimestamp)).setText(String.valueOf(r.getTimestamp()));
+                        try {
+                            SimpleDateFormat inputFormat = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss", Locale.getDefault());
+                            SimpleDateFormat outputFormat = new SimpleDateFormat("dd-MM-yyyy HH:mm:ss", Locale.getDefault());
+                            Date parsedDate = inputFormat.parse(r.getTimestamp());
+                            String formattedDate = outputFormat.format(parsedDate);
+                            ((TextView) card.findViewById(R.id.tvTimestamp)).setText(formattedDate);
+                        } catch (Exception e) {
+                            ((TextView) card.findViewById(R.id.tvTimestamp)).setText("");
+                        }
 
                         resultsContainer.addView(card);
                     }
