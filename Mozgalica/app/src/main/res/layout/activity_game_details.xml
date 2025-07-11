@@ -241,8 +241,7 @@
             <ImageView
                 android:layout_width="@dimen/margin_large"
                 android:layout_height="@dimen/margin_large"
-                android:src="@drawable/ic_games"
-                app:tint="@color/colorPrimary"
+                android:src="@drawable/ic_games_fill"
                 android:contentDescription="@string/games" />
 
             <TextView

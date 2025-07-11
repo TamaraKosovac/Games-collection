@@ -270,8 +270,7 @@
             <ImageView
                 android:layout_width="@dimen/margin_large"
                 android:layout_height="@dimen/margin_large"
-                android:src="@drawable/ic_results"
-                app:tint="@color/colorPrimary"
+                android:src="@drawable/ic_results_fill"
                 android:contentDescription="@string/my_results" />
             <TextView
                 android:text="@string/my_results"

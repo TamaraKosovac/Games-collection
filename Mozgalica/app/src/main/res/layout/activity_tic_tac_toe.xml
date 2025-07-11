@@ -59,19 +59,36 @@
             android:onClick="onSettings" />
     </RelativeLayout>
 
-    <TextView
-        android:id="@+id/tvPlayerTurn"
-        style="@style/MozgalicaTitle"
-        android:text="@string/tic_tac_toe"
-        android:textSize="@dimen/title_text_size"
+    <LinearLayout
+        android:id="@+id/turnWrapper"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:gravity="center_vertical"
+        android:layout_marginTop="@dimen/input_min_height"
+        android:layout_marginBottom="@dimen/margin_extra_small"
         app:layout_constraintTop_toBottomOf="@id/topNavBar"
         app:layout_constraintBottom_toTopOf="@+id/gridLayout"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        android:layout_marginTop="@dimen/input_min_height"
-        android:layout_marginBottom="@dimen/margin_extra_small"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content" />
+        app:layout_constraintEnd_toEndOf="parent">
+
+        <ImageView
+            android:id="@+id/ivInfoIcon"
+            android:layout_width="@dimen/icon_size_nav"
+            android:layout_height="@dimen/icon_size_nav"
+            android:src="@drawable/ic_info"
+            android:layout_marginEnd="@dimen/game_button_details_margin"
+            android:contentDescription="@string/tic_tac_toe"/>
+
+        <TextView
+            android:id="@+id/tvPlayerTurn"
+            style="@style/MozgalicaTitle"
+            android:text="@string/tic_tac_toe"
+            android:textSize="@dimen/title_text_size"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+    </LinearLayout>
+
 
     <GridLayout
         android:id="@+id/gridLayout"
@@ -79,7 +96,7 @@
         android:layout_height="wrap_content"
         android:rowCount="3"
         android:columnCount="3"
-        app:layout_constraintTop_toBottomOf="@id/tvPlayerTurn"
+        app:layout_constraintTop_toBottomOf="@id/turnWrapper"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         android:layout_marginTop="@dimen/card_size">
@@ -169,8 +186,7 @@
             <ImageView
                 android:layout_width="@dimen/margin_large"
                 android:layout_height="@dimen/margin_large"
-                android:src="@drawable/ic_games"
-                app:tint="@color/colorPrimary"
+                android:src="@drawable/ic_games_fill"
                 android:contentDescription="@string/games" />
 
             <TextView
