@@ -97,8 +97,7 @@
             <ImageView
                 android:layout_width="@dimen/margin_large"
                 android:layout_height="@dimen/margin_large"
-                android:src="@drawable/ic_home"
-                app:tint="@color/colorPrimary"
+                android:src="@drawable/ic_home_fill"
                 android:contentDescription="@string/home" />
 
             <TextView
